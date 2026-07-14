@@ -120,6 +120,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const [mobileExpandedIdx, setMobileExpandedIdx] = useState(null)
   const [butterBarVisible, setButterBarVisible] = useState(true)
 
   useEffect(() => {
@@ -268,13 +269,53 @@ export default function Header() {
             </Link>
           </div>
           <nav className="mobile-drawer__nav">
-            {NAV_ITEMS.map((item, idx) => (
-              <a key={idx} href={item.href || '#'} className="mobile-drawer__nav-link" onClick={() => setDrawerOpen(false)}>
-                <span>{item.label}</span>
-                {item.items && <ArrowForward />}
-              </a>
-            ))}
-            <hr className="mobile-drawer__separator" />
+            {NAV_ITEMS.map((item, idx) => {
+              const hasSub = item.items || item.megaMenu;
+              const isExpanded = mobileExpandedIdx === idx;
+              return (
+                <div key={idx} className="mobile-drawer__nav-item" style={{ marginBottom: '8px' }}>
+                  {hasSub ? (
+                    <>
+                      <button 
+                        className="mobile-drawer__nav-link" 
+                        onClick={() => setMobileExpandedIdx(isExpanded ? null : idx)}
+                        style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0' }}
+                      >
+                        <span style={{ fontSize: '1.1rem', fontWeight: '500' }}>{item.label}</span>
+                        <svg style={{ transform: isExpanded ? 'rotate(90deg)' : 'none', transition: 'transform 0.2s', color: 'var(--text-secondary)' }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+                      </button>
+                      {isExpanded && (
+                        <div className="mobile-drawer__subnav" style={{ paddingLeft: '16px', paddingBottom: '8px', display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '8px' }}>
+                          {item.items && item.items.map((sub, si) => (
+                            sub.href.startsWith('/') ? (
+                              <Link key={si} to={sub.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'block', fontSize: '1rem' }}>{sub.label}</Link>
+                            ) : (
+                              <a key={si} href={sub.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'block', fontSize: '1rem' }}>{sub.label}</a>
+                            )
+                          ))}
+                          {item.megaMenu && (
+                            <>
+                              <Link to="/all-products" className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-primary)', textDecoration: 'none', display: 'block', fontWeight: '600', fontSize: '1rem' }}>Explore All Products</Link>
+                              {item.megaMenu.leftSide.columns.map(col => col.links.map(link => (
+                                <Link key={link.label} to={link.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'block', fontSize: '1rem' }}>{link.label}</Link>
+                              )))}
+                              {item.megaMenu.rightSide.columns.map(col => col.links.map(link => (
+                                <Link key={link.label} to={link.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'block', fontSize: '1rem' }}>{link.label}</Link>
+                              )))}
+                            </>
+                          )}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <a href={item.href || '#'} className="mobile-drawer__nav-link" onClick={() => setDrawerOpen(false)} style={{ display: 'block', padding: '12px 0' }}>
+                      <span style={{ fontSize: '1.1rem', fontWeight: '500' }}>{item.label}</span>
+                    </a>
+                  )}
+                </div>
+              );
+            })}
+            <hr className="mobile-drawer__separator" style={{ margin: '24px 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
           </nav>
           <div className="mobile-drawer__footer">
             <Link to="/contact" className="gfe-button gfe-button--primary" onClick={() => setDrawerOpen(false)}>Get started</Link>
