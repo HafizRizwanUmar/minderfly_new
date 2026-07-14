@@ -257,69 +257,99 @@ export default function Header() {
       </header>
 
       {/* Mobile Drawer */}
-      <div className={`mobile-drawer${drawerOpen ? ' open' : ''}`} onClick={(e) => e.target.classList.contains('mobile-drawer__backdrop') && setDrawerOpen(false)}>
+      <div className={`mobile-drawer${drawerOpen ? ' open' : ''}`}>
         <div className="mobile-drawer__backdrop" onClick={() => setDrawerOpen(false)} />
         <div className="mobile-drawer__panel">
+
+          {/* Header */}
           <div className="mobile-drawer__header">
-            <button className="mobile-drawer__close" onClick={() => setDrawerOpen(false)}>
+            <Link to="/" className="mobile-drawer__logo-text" onClick={() => setDrawerOpen(false)}>
+              Minderfly
+            </Link>
+            <button className="mobile-drawer__close" onClick={() => setDrawerOpen(false)} aria-label="Close menu">
               <CloseIcon />
             </button>
-            <Link to="/" className="gfe-header__logo" onClick={() => setDrawerOpen(false)}>
-              <span className="gfe-header__logo-name" style={{fontSize:'18px'}}>minderfly</span>
-            </Link>
           </div>
+
+          {/* Nav Items */}
           <nav className="mobile-drawer__nav">
             {NAV_ITEMS.map((item, idx) => {
               const hasSub = item.items || item.megaMenu;
               const isExpanded = mobileExpandedIdx === idx;
               return (
-                <div key={idx} className="mobile-drawer__nav-item" style={{ marginBottom: '8px' }}>
+                <div key={idx} className="mobile-drawer__nav-item">
                   {hasSub ? (
                     <>
-                      <button 
-                        className="mobile-drawer__nav-link" 
+                      <button
+                        className="mobile-drawer__nav-link"
                         onClick={() => setMobileExpandedIdx(isExpanded ? null : idx)}
-                        style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0' }}
                       >
-                        <span style={{ fontSize: '1.1rem', fontWeight: '500' }}>{item.label}</span>
-                        <svg style={{ transform: isExpanded ? 'rotate(90deg)' : 'none', transition: 'transform 0.2s', color: 'var(--text-secondary)' }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+                        <span>{item.label}</span>
+                        <svg
+                          className="nav-chevron"
+                          style={{ transform: isExpanded ? 'rotate(90deg)' : 'none', transition: 'transform 0.25s ease' }}
+                          width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                        >
+                          <path d="M9 18l6-6-6-6"/>
+                        </svg>
                       </button>
+
                       {isExpanded && (
-                        <div className="mobile-drawer__subnav" style={{ paddingLeft: '16px', paddingBottom: '8px', display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '8px' }}>
+                        <div className="mobile-drawer__subnav">
+                          {/* Simple items */}
                           {item.items && item.items.map((sub, si) => (
                             sub.href.startsWith('/') ? (
-                              <Link key={si} to={sub.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'block', fontSize: '1rem' }}>{sub.label}</Link>
+                              <Link key={si} to={sub.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)}>{sub.label}</Link>
                             ) : (
-                              <a key={si} href={sub.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'block', fontSize: '1rem' }}>{sub.label}</a>
+                              <a key={si} href={sub.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)}>{sub.label}</a>
                             )
                           ))}
+
+                          {/* Mega menu: group by category */}
                           {item.megaMenu && (
                             <>
-                              <Link to="/all-products" className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-primary)', textDecoration: 'none', display: 'block', fontWeight: '600', fontSize: '1rem' }}>Explore All Products</Link>
-                              {item.megaMenu.leftSide.columns.map(col => col.links.map(link => (
-                                <Link key={link.label} to={link.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'block', fontSize: '1rem' }}>{link.label}</Link>
-                              )))}
-                              {item.megaMenu.rightSide.columns.map(col => col.links.map(link => (
-                                <Link key={link.label} to={link.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)} style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'block', fontSize: '1rem' }}>{link.label}</Link>
-                              )))}
+                              <Link to="/all-products" className="mobile-drawer__subnav-link featured" onClick={() => setDrawerOpen(false)}>
+                                ✦ Explore All Products
+                              </Link>
+                              {item.megaMenu.leftSide.columns.map((col, ci) => (
+                                <div key={ci}>
+                                  {col.title && <div className="mobile-drawer__subnav-group-title">{col.title}</div>}
+                                  {col.links.map(link => (
+                                    <Link key={link.label} to={link.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)}>{link.label}</Link>
+                                  ))}
+                                </div>
+                              ))}
+                              {item.megaMenu.rightSide.columns.map((col, ci) => (
+                                <div key={ci}>
+                                  <div className="mobile-drawer__subnav-group-title">{item.megaMenu.rightSide.title}</div>
+                                  {col.links.map(link => (
+                                    <Link key={link.label} to={link.href} className="mobile-drawer__subnav-link" onClick={() => setDrawerOpen(false)}>{link.label}</Link>
+                                  ))}
+                                </div>
+                              ))}
                             </>
                           )}
                         </div>
                       )}
                     </>
                   ) : (
-                    <a href={item.href || '#'} className="mobile-drawer__nav-link" onClick={() => setDrawerOpen(false)} style={{ display: 'block', padding: '12px 0' }}>
-                      <span style={{ fontSize: '1.1rem', fontWeight: '500' }}>{item.label}</span>
+                    <a href={item.href || '#'} className="mobile-drawer__nav-link" onClick={() => setDrawerOpen(false)}>
+                      <span>{item.label}</span>
                     </a>
                   )}
                 </div>
               );
             })}
-            <hr className="mobile-drawer__separator" style={{ margin: '24px 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
+            <hr className="mobile-drawer__separator" />
           </nav>
+
+          {/* Footer CTA */}
           <div className="mobile-drawer__footer">
-            <Link to="/contact" className="gfe-button gfe-button--primary" onClick={() => setDrawerOpen(false)}>Get started</Link>
+            <Link to="/contact" className="gfe-button gfe-button--primary" onClick={() => setDrawerOpen(false)}>
+              Get started
+            </Link>
           </div>
+
         </div>
       </div>
     </>
