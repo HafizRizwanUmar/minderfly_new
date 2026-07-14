@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import SEOHead from '../components/SEOHead'
 import cinemaflyLogo from '../assets/product logos/cinemafly.png'
 import docsignerLogo from '../assets/product logos/docsigner.png'
 import sanadLogo from '../assets/product logos/sanad.png'
@@ -8,223 +10,245 @@ import lunarLogo from '../assets/product logos/lunar.png'
 import minimalLogo from '../assets/product logos/minimal.png'
 import pastelLogo from '../assets/product logos/pastel.png'
 
+const CATEGORIES = ['All', 'Desktop Apps', 'Web Apps', 'Extensions', 'Themes']
+
+const PRODUCTS = [
+  {
+    name: 'Cinemafly',
+    img: cinemaflyLogo,
+    link: '/products/cinemafly',
+    category: 'Desktop Apps',
+    platform: 'Windows',
+    desc: 'A beautiful Windows desktop app for cinephiles to track, rate and discover films.',
+    badge: 'Windows',
+  },
+  {
+    name: 'DocSigner',
+    img: docsignerLogo,
+    link: '/products/docsigner',
+    category: 'Desktop Apps',
+    platform: 'Windows',
+    desc: 'PKI-based digital signatures for PDFs. Legally valid in 60+ countries.',
+    badge: 'Windows',
+  },
+  {
+    name: 'Sanad PDF Editor',
+    img: sanadLogo,
+    link: '/products/sanad-pdf-editor',
+    category: 'Desktop Apps',
+    platform: 'Windows',
+    desc: 'Full-featured PDF editor at a one-time price. The Acrobat alternative.',
+    badge: 'Windows',
+  },
+  {
+    name: 'InklessLMS',
+    img: inklessLogo,
+    link: '/products/inkless-lms',
+    category: 'Web Apps',
+    platform: 'Web',
+    desc: 'Cloud-based Learning Management System for modern educators.',
+    badge: 'Web',
+  },
+  {
+    name: 'Flutter Web Emulator',
+    img: emulatorLogo,
+    link: '/products/flutter-web-emulator',
+    category: 'Extensions',
+    platform: 'VS Code',
+    desc: 'Preview your Flutter web app live inside VS Code — no browser switching.',
+    badge: 'VS Code',
+  },
+  {
+    name: 'Minimal Desk Theme',
+    img: minimalLogo,
+    link: '/products/minimal-desk-theme',
+    category: 'Themes',
+    platform: 'Chrome',
+    desc: 'A clean, distraction-free Chrome theme for focused work sessions.',
+    badge: 'Chrome',
+  },
+  {
+    name: 'Pastel Aurora',
+    img: pastelLogo,
+    link: '/products/pastel-aurora',
+    category: 'Themes',
+    platform: 'Chrome',
+    desc: 'Soft pastel gradients that bring calm and colour to your browser.',
+    badge: 'Chrome',
+  },
+  {
+    name: 'Lunar Leap Theme',
+    img: lunarLogo,
+    link: '/products/lunar-leap-theme',
+    category: 'Themes',
+    platform: 'Chrome',
+    desc: 'A sleek dark-space aesthetic for night-mode Chrome users.',
+    badge: 'Chrome',
+  },
+]
+
+const BADGE_COLOR = {
+  Windows: { bg: '#EFF6FF', color: '#1D4ED8' },
+  Web:     { bg: '#F0FDF4', color: '#15803D' },
+  'VS Code': { bg: '#F5F3FF', color: '#6D28D9' },
+  Chrome:  { bg: '#FFF7ED', color: '#C2410C' },
+}
+
+const STATS = [
+  { value: '8+',    label: 'Products launched' },
+  { value: '100+',  label: 'Countries reached' },
+  { value: '50K+',  label: 'Downloads & installs' },
+  { value: '3',     label: 'Team members' },
+]
+
 export default function AllProductsPage() {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  useEffect(() => { window.scrollTo(0, 0) }, [])
+  const [active, setActive] = useState('All')
 
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const totalSlides = 4
-
-  const handlePrev = () => setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))
-  const handleNext = () => setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))
-
-  const products = [
-    { name: 'Cinemafly', img: cinemaflyLogo, link: '/products/cinemafly' },
-    { name: 'DocSigner', img: docsignerLogo, link: '/products/docsigner' },
-    { name: 'SanadPdf Editor', img: sanadLogo, link: '/products/sanad-pdf-editor' },
-    { name: 'InklessLMS', img: inklessLogo, link: '/products/inkless-lms' },
-    { name: 'Flutter Web Emulator', img: emulatorLogo, link: '/products/flutter-web-emulator' },
-    { name: 'Minimal Desk Theme', img: minimalLogo, link: '/products/minimal-desk-theme' },
-    { name: 'Pastel Aurora', img: pastelLogo, link: '/products/pastel-aurora' },
-    { name: 'Lunar Leap Theme', img: lunarLogo, link: '/products/lunar-leap-theme' },
-  ]
-
-  // Duplicate for infinite marquee
-  const marqueeItems = [...products, ...products, ...products]
+  const filtered = active === 'All' ? PRODUCTS : PRODUCTS.filter(p => p.category === active)
 
   return (
-    <div style={{ background: '#fff', fontFamily: '"Google Sans", Roboto, Arial, sans-serif' }}>
-      <style>{`
-        .all-products-marquee-container {
-          overflow: hidden;
-          white-space: nowrap;
-          width: 100%;
-          padding: 0 0 40px;
-          border-bottom: 1px solid #e0e0e0;
-          margin-bottom: 40px;
-          position: relative;
-        }
-        .all-products-marquee {
-          display: inline-block;
-          animation: marqueeScroll 30s linear infinite;
-        }
-        .all-products-marquee:hover {
-          animation-play-state: paused;
-        }
-        .marquee-icon {
-          font-size: 32px;
-          margin: 0 40px;
-          display: inline-block;
-        }
-        @keyframes marqueeScroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.33%); } /* Translates exactly one set of products */
-        }
-        .product-grid-card {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 16px 24px;
-          border: 1px solid #dadce0;
-          border-radius: 12px;
-          background: #fff;
-          text-decoration: none;
-          color: #202124;
-          transition: background-color 0.2s, box-shadow 0.2s;
-        }
-        .product-grid-card:hover {
-          background-color: #f8f9fa;
-          box-shadow: 0 1px 3px rgba(60,64,67,0.3);
-        }
-        .carousel-container {
-          background: #e8f0fe;
-          border-radius: 24px;
-          padding: 60px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          position: relative;
-          max-width: 1200px;
-          margin: 0 auto 80px;
-          overflow: hidden;
-        }
-        .carousel-btn {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          background: #fff;
-          border: 1px solid #dadce0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 10;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        }
-        .carousel-btn:hover {
-          background: #f1f3f4;
-        }
-        .carousel-btn.prev { left: 20px; }
-        .carousel-btn.next { right: 20px; }
-        .carousel-dots {
-          display: flex;
-          justify-content: center;
-          gap: 12px;
-          margin-top: 30px;
-        }
-        .carousel-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          border: 1px solid #5f6368;
-          cursor: pointer;
-        }
-        .carousel-dot.active {
-          background: #202124;
-          border-color: #202124;
-        }
-      `}</style>
+    <div style={{ background: 'var(--white)', color: 'var(--text-primary)' }}>
+      <SEOHead
+        title="All Products — Minderfly | Desktop, Web & Extensions"
+        description="Browse all Minderfly products — desktop apps, web apps, VS Code extensions, and Chrome themes used in 100+ countries."
+        canonical="https://minderfly.com/all-products"
+      />
 
-      {/* 1. Hero Section (Marquee & Headline) */}
-      <section style={{ minHeight: '50vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginBottom: '80px' }}>
-        <div className="all-products-marquee-container">
-          <div className="all-products-marquee">
-            {marqueeItems.map((item, idx) => (
-              <span key={idx} className="marquee-icon">
-                {item.img ? (
-                  <img src={item.img} alt={item.name} style={{ width: '32px', height: '32px', verticalAlign: 'middle', objectFit: 'contain' }} />
-                ) : (
-                  item.icon
-                )}
-              </span>
+      {/* ── Hero ── */}
+      <section style={{ padding: '96px 0 80px', borderBottom: '1px solid var(--border-color)' }}>
+        <div className="gfe-container" style={{ textAlign: 'center' }}>
+          <p style={{ fontSize: '13px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--google-blue-600)', marginBottom: '20px' }}>
+            All Products
+          </p>
+          <h1 style={{ fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: '700', letterSpacing: '-1.5px', lineHeight: 1.1, color: 'var(--text-primary)', marginBottom: '24px', maxWidth: '760px', margin: '0 auto 24px' }}>
+            Software that ships and scales
+          </h1>
+          <p style={{ fontSize: '20px', color: 'var(--text-secondary)', maxWidth: '560px', margin: '0 auto 48px', lineHeight: 1.6 }}>
+            Every product we build starts with a real problem. Here's everything we've shipped.
+          </p>
+
+          {/* Stats row */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
+            {STATS.map(s => (
+              <div key={s.label} style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '32px', fontWeight: '800', color: 'var(--text-primary)', letterSpacing: '-1px' }}>{s.value}</div>
+                <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginTop: '4px' }}>{s.label}</div>
+              </div>
             ))}
           </div>
         </div>
-        <div style={{ textAlign: 'center', padding: '0 20px' }}>
-          <h1 style={{ fontSize: '3.5rem', fontWeight: '400', color: '#202124', margin: '0' }}>
-            Helpful products, built with you in mind
-          </h1>
+      </section>
+
+      {/* ── Filter Tabs + Grid ── */}
+      <section style={{ padding: '72px 0 100px' }}>
+        <div className="gfe-container">
+
+          {/* Filter tabs */}
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '52px' }}>
+            {CATEGORIES.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActive(cat)}
+                style={{
+                  padding: '8px 20px',
+                  borderRadius: '100px',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  border: active === cat ? '1.5px solid var(--google-blue-600)' : '1.5px solid var(--border-color)',
+                  background: active === cat ? 'var(--google-blue-600)' : 'var(--white)',
+                  color: active === cat ? '#fff' : 'var(--text-secondary)',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Product grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gap: '24px',
+          }}>
+            {filtered.map((product) => (
+              <Link
+                key={product.name}
+                to={product.link}
+                style={{ textDecoration: 'none' }}
+              >
+                <div
+                  style={{
+                    border: '1px solid var(--border-color)',
+                    borderRadius: '16px',
+                    padding: '28px',
+                    background: 'var(--white)',
+                    transition: 'all 0.2s ease',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '16px',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.boxShadow = '0 8px 32px rgba(60,64,67,0.12)'
+                    e.currentTarget.style.transform = 'translateY(-3px)'
+                    e.currentTarget.style.borderColor = 'transparent'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.boxShadow = 'none'
+                    e.currentTarget.style.transform = 'none'
+                    e.currentTarget.style.borderColor = 'var(--border-color)'
+                  }}
+                >
+                  {/* Top row: logo + badge */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <img src={product.img} alt={product.name} style={{ width: '44px', height: '44px', objectFit: 'contain', borderRadius: '10px' }} />
+                    <span style={{
+                      fontSize: '11px', fontWeight: '600', letterSpacing: '0.4px',
+                      padding: '4px 10px', borderRadius: '100px',
+                      background: BADGE_COLOR[product.badge]?.bg,
+                      color: BADGE_COLOR[product.badge]?.color,
+                    }}>
+                      {product.badge}
+                    </span>
+                  </div>
+
+                  {/* Name + desc */}
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: '17px', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '8px' }}>
+                      {product.name}
+                    </div>
+                    <div style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                      {product.desc}
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', fontWeight: '600', color: 'var(--google-blue-600)' }}>
+                    View product
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* 2. Featured Carousel */}
-      <div style={{ padding: '0 20px' }}>
-        <div className="carousel-container">
-          <button className="carousel-btn prev" onClick={handlePrev}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          
-          <div style={{ flex: '1', maxWidth: '400px', marginLeft: '60px' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: '400', color: '#202124', marginBottom: '16px' }}>
-              Minderfly Live
-            </h2>
-            <p style={{ fontSize: '1.1rem', color: '#5f6368', marginBottom: '32px', lineHeight: '1.5' }}>
-              Experience the next generation of intuitive software solutions. Work smarter, not harder.
-            </p>
-            <a href="#" className="gfe-button gfe-button--primary" style={{ padding: '12px 32px', borderRadius: '24px' }}>
-              Talk it out
-            </a>
-          </div>
-
-          <div style={{ flex: '1', display: 'flex', justifyContent: 'center' }}>
-            <div style={{ background: '#000', borderRadius: '24px', width: '300px', height: '400px', position: 'relative', overflow: 'hidden', boxShadow: '0 24px 48px rgba(0,0,0,0.2)' }}>
-               {/* Mock Phone Screen */}
-               <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Tech" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
-               <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '16px', background: 'rgba(255,255,255,0.2)', padding: '12px 24px', borderRadius: '32px', backdropFilter: 'blur(10px)' }}>
-                 <div style={{ width: '20px', height: '20px', background: '#fff', borderRadius: '50%' }}></div>
-                 <div style={{ width: '20px', height: '20px', background: '#fff', borderRadius: '50%' }}></div>
-                 <div style={{ width: '20px', height: '20px', background: '#fff', borderRadius: '50%' }}></div>
-               </div>
-            </div>
-          </div>
-
-          <button className="carousel-btn next" onClick={handleNext}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-        </div>
-        <div className="carousel-dots">
-          {[...Array(totalSlides)].map((_, i) => (
-            <div key={i} className={`carousel-dot ${currentSlide === i ? 'active' : ''}`} onClick={() => setCurrentSlide(i)}></div>
-          ))}
-        </div>
-      </div>
-
-      {/* 3. Products Grid */}
-      <section style={{ padding: '120px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '2.5rem', fontWeight: '400', color: '#202124', textAlign: 'center', marginBottom: '40px' }}>
-          Minderfly products
-        </h2>
-        
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '40px', gap: '16px' }}>
-          <span style={{ color: '#5f6368', fontSize: '1rem' }}>Filter by:</span>
-          <select style={{ padding: '8px 40px 8px 16px', fontSize: '1rem', border: '1px solid #dadce0', borderRadius: '4px', background: '#fff', color: '#202124', appearance: 'none', cursor: 'pointer' }}>
-            <option>Featured</option>
-            <option>All</option>
-          </select>
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
-          {products.map((product, index) => (
-            <a key={index} href={product.link} className="product-grid-card">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                {product.img ? (
-                  <img src={product.img} alt={product.name} style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
-                ) : (
-                  <span style={{ fontSize: '32px', width: '32px', display: 'inline-block', textAlign: 'center' }}>{product.icon}</span>
-                )}
-                <span style={{ fontSize: '1rem', fontWeight: '500' }}>{product.name}</span>
-              </div>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </a>
-          ))}
+      {/* ── Bottom CTA ── */}
+      <section style={{ padding: '80px 0', borderTop: '1px solid var(--border-color)', background: 'var(--grey-50)' }}>
+        <div className="gfe-container" style={{ textAlign: 'center' }}>
+          <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: '700', letterSpacing: '-1px', marginBottom: '16px' }}>
+            Have an idea for a product?
+          </h2>
+          <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '480px', margin: '0 auto 36px', lineHeight: 1.6 }}>
+            We partner with founders to design, build, and scale from zero to global.
+          </p>
+          <Link to="/contact" className="gfe-button gfe-button--primary" style={{ height: '52px', fontSize: '16px', padding: '0 36px', borderRadius: '12px' }}>
+            Start a project with us
+          </Link>
         </div>
       </section>
     </div>
