@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import SEOHead from '../components/SEOHead'
 
 const QUICK_LINKS = [
-  { label: 'Home', href: '/', icon: '🏠' },
-  { label: 'All Products', href: '/all-products', icon: '🚀' },
-  { label: 'Contact Us', href: '/contact', icon: '💬' },
-  { label: 'Our Team', href: '/our-values/team', icon: '👥' },
+  { label: 'Home', href: '/' },
+  { label: 'All Products', href: '/all-products' },
+  { label: 'Contact Us', href: '/contact' },
+  { label: 'Our Team', href: '/our-values/team' },
 ]
 
 export default function NotFoundPage() {
@@ -20,7 +20,6 @@ export default function NotFoundPage() {
         canonical="https://minderfly.com/404"
       />
 
-      {/* Main Content */}
       <div style={{
         flex: 1,
         display: 'flex',
@@ -31,39 +30,21 @@ export default function NotFoundPage() {
         textAlign: 'center',
       }}>
 
-        {/* Big 404 */}
+        {/* 404 */}
         <div style={{
-          fontSize: 'clamp(100px, 20vw, 180px)',
+          fontSize: 'clamp(120px, 22vw, 200px)',
           fontWeight: '800',
           lineHeight: 1,
           letterSpacing: '-8px',
-          background: 'linear-gradient(135deg, #e8eaed 0%, #c5c8ce 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
+          color: '#000000',
           userSelect: 'none',
           marginBottom: '32px',
         }}>
           404
         </div>
 
-        {/* Minderfly logo mark above heading */}
-        <div style={{
-          width: '56px',
-          height: '56px',
-          borderRadius: '16px',
-          background: 'var(--google-blue-600)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginBottom: '24px',
-          boxShadow: '0 8px 24px rgba(26,115,232,0.3)',
-        }}>
-          <span style={{ fontSize: '28px', color: '#fff', fontWeight: '800', letterSpacing: '-1px' }}>M</span>
-        </div>
-
         <h1 style={{
-          fontSize: 'clamp(24px, 5vw, 36px)',
+          fontSize: 'clamp(22px, 4vw, 32px)',
           fontWeight: '700',
           color: 'var(--text-primary)',
           marginBottom: '16px',
@@ -82,7 +63,7 @@ export default function NotFoundPage() {
           This page doesn't exist on Minderfly's website. Maybe the link is broken, or the page was moved. Let's get you back on track.
         </p>
 
-        {/* Primary CTA */}
+        {/* CTAs */}
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '64px' }}>
           <Link to="/" className="gfe-button gfe-button--primary" style={{ height: '52px', fontSize: '16px', padding: '0 32px', borderRadius: '12px' }}>
             Back to Minderfly
@@ -93,13 +74,13 @@ export default function NotFoundPage() {
         </div>
 
         {/* Quick Links */}
-        <div style={{ width: '100%', maxWidth: '560px' }}>
+        <div style={{ width: '100%', maxWidth: '520px' }}>
           <p style={{ fontSize: '13px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--grey-500)', marginBottom: '20px' }}>
             Or jump to
           </p>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))',
             gap: '12px',
           }}>
             {QUICK_LINKS.map(link => (
@@ -108,12 +89,11 @@ export default function NotFoundPage() {
                 to={link.href}
                 style={{
                   display: 'flex',
-                  flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '8px',
-                  padding: '20px 12px',
+                  justifyContent: 'center',
+                  padding: '16px 12px',
                   background: 'var(--grey-50)',
-                  borderRadius: '14px',
+                  borderRadius: '12px',
                   border: '1px solid var(--border-color)',
                   textDecoration: 'none',
                   color: 'var(--text-primary)',
@@ -134,8 +114,7 @@ export default function NotFoundPage() {
                   e.currentTarget.style.transform = 'none'
                 }}
               >
-                <span style={{ fontSize: '24px' }}>{link.icon}</span>
-                <span>{link.label}</span>
+                {link.label}
               </Link>
             ))}
           </div>
@@ -143,7 +122,6 @@ export default function NotFoundPage() {
 
       </div>
 
-      {/* Bottom bar */}
       <div style={{
         borderTop: '1px solid var(--border-color)',
         padding: '20px 24px',
