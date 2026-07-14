@@ -36,6 +36,7 @@ import AlmiraalPage from './pages/AlmiraalPage'
 // Resource Pages
 import HowWeBuildPage from './pages/HowWeBuildPage'
 import NewsPage from './pages/NewsPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 const HOME_SCHEMA = {
   '@context': 'https://schema.org',
@@ -93,6 +94,7 @@ function App() {
         <Route path="/all-products" element={<AllProductsPage />} />
         <Route path="/how-we-build" element={<HowWeBuildPage />} />
         <Route path="/news" element={<NewsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </>
