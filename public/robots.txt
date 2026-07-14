@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://minderfly.com/sitemap.xml
+
+# Crawl-delay for courtesy (optional, most major crawlers ignore this)
+Crawl-delay: 1
