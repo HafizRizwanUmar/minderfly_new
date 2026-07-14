@@ -100,24 +100,24 @@ const WHO_ITS_FOR = [
 
 const FAQS = [
   {
-    q: 'Is InklessLMS really easy to use?',
-    a: "Yes — 95% of teachers create their first course in their first session. No technical knowledge required.",
+    q: 'How easy is it for a teacher to get started?',
+    a: "Very easy — 95% of educators publish their first course within their first session on the platform. InklessLMS is designed so that you don't need any technical background. The course builder uses a drag-and-drop interface. Uploading video, adding quizzes, structuring modules, setting pricing — every step is guided. If you can use Google Docs, you can build a course on InklessLMS.",
   },
   {
-    q: 'Does it work on mobile?',
-    a: "Native iOS and Android apps. Students can download content for offline viewing.",
+    q: 'Does it work on mobile for students?',
+    a: "Yes — InklessLMS has native iOS and Android apps for students. The mobile experience is fully responsive and supports offline content download, so students can watch lectures, take quizzes, and read materials without an internet connection. Progress syncs automatically when they reconnect.",
   },
   {
-    q: 'Can I issue certificates?',
-    a: "Yes — branded, verifiable digital certificates are automatically generated on course completion.",
+    q: 'Can I issue verified certificates to my students?',
+    a: "Yes. Branded, verifiable completion certificates are automatically generated when a student finishes a course. Certificates include a unique verification ID that can be independently verified online — making them credible for professional development, compliance training, or academic courses. You control the branding, signature, and certificate design.",
   },
   {
-    q: 'What integrations are available?',
-    a: "Zoom, Google Meet for live classes. More integrations added regularly.",
+    q: 'What video and content formats are supported?',
+    a: "InklessLMS supports MP4, MOV, and WebM video uploads. Content can include video lectures, PDFs, slide decks, audio files, live sessions via Zoom or Google Meet, and interactive quizzes (multiple choice, true/false, short answer). You can structure courses into sections and modules with prerequisites and drip scheduling.",
   },
   {
-    q: 'How do I get started?',
-    a: "Visit inklesslms.com and start a free trial. No credit card needed.",
+    q: 'How do I start using InklessLMS?',
+    a: "Visit inklesslms.com and start a free trial — no credit card required. You can create your first course, invite students, and test the full platform during the trial period. Our onboarding team provides a guided setup walkthrough for institutions and larger teams.",
   },
 ]
 

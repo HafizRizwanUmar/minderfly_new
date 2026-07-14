@@ -29,11 +29,11 @@ const buildStory = [
 ]
 
 const faqs = [
-  { q: 'Is it actually a lifetime purchase?', a: 'Yes. $9.99 once, forever. No annual fee, no subscription, no hidden costs.' },
-  { q: 'Can I edit any PDF?', a: 'Yes — text, images, forms, pages. Scanned PDFs need the OCR feature to become editable.' },
-  { q: 'How does it compare to Adobe Acrobat?', a: 'Sanad covers 90% of everyday PDF editing needs at a one-time cost vs Adobe\'s $180/year subscription.' },
-  { q: 'Does it support digital signatures?', a: 'Yes, full PKI-based digital signatures are built in, included in the Pro tier.' },
-  { q: 'What\'s the trial like?', a: 'Full Pro access for 3 days — all features, no restrictions. No credit card needed to start.' },
+  { q: 'Is it really a one-time purchase?', a: 'Yes — $9.99 once, lifetime access. No subscription, no annual renewal, no surprise charges. When you pay, you own the software permanently. All major updates within the current version are included at no extra cost. We believe productivity software should be a tool you buy once, not a service you rent forever.' },
+  { q: 'Can I edit any PDF, including scanned documents?', a: 'You can edit any digitally-created PDF directly — change text, replace images, reorder pages, fill forms, and more. For scanned PDFs (image-based documents), the built-in OCR engine converts them into fully editable text with support for 20+ languages. Sanad handles both seamlessly within the same workflow.' },
+  { q: 'How does Sanad compare to Adobe Acrobat?', a: 'Adobe Acrobat Pro costs $19.99/month ($240/year). Sanad PDF Editor is $9.99 once — forever. For the vast majority of PDF editing tasks (text editing, image management, page operations, form filling, digital signatures), Sanad covers 90%+ of what Acrobat offers at a fraction of the lifetime cost. For individuals, freelancers, students, and small teams, it is the financially rational choice.' },
+  { q: 'Are digital signatures included?', a: 'Yes — full PKI-based digital signatures are built into the Pro tier. You can sign edited PDFs without switching to another application. Signatures are legally recognized and comply with major international standards. This is the same signing technology found in dedicated signature tools, now integrated directly into your PDF editor.' },
+  { q: 'What does the 3-day trial include?', a: 'The 3-day trial gives you unrestricted access to every Pro feature — text editing, OCR, digital signatures, batch export, page operations, and more. No credit card is required to start. After 3 days, you can purchase the lifetime Pro license directly from the app or continue with the free tier, which provides basic viewing and limited editing.' },
 ]
 
 const SANAD_SCHEMA = {

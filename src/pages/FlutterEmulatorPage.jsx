@@ -83,24 +83,24 @@ const PRO_FEATURES = [
 
 const FAQS = [
   {
-    q: 'How do I install it?',
-    a: "Search 'Flutter Web Emulator' in VS Code Extensions panel or visit the Marketplace. One click to install.",
+    q: 'How do I install Flutter Web Emulator?',
+    a: "Open VS Code, go to the Extensions panel (Ctrl+Shift+X), and search 'Flutter Web Emulator'. Click Install — that's it. Alternatively, visit the VS Code Marketplace page and click the green Install button, which will open directly in your editor. The extension is live in your editor within 30 seconds.",
   },
   {
-    q: 'Does it require any configuration?',
-    a: "None. Open a Flutter web project and run the command. The extension detects your Flutter installation automatically.",
+    q: 'Does it need any configuration or setup?',
+    a: "Zero configuration. Open any Flutter web project in VS Code, open the Command Palette (Ctrl+Shift+P), and run 'Flutter Web Emulator: Start'. The extension automatically detects your Flutter SDK path, starts your dev server, and opens a live preview panel inside VS Code. No JSON configs, no port setup, no manual steps.",
   },
   {
-    q: 'Is the $1 really lifetime?',
-    a: "Yes — one dollar, once, forever. We believe developer tools should be affordable.",
+    q: 'Is the $1 lifetime price real?',
+    a: "Yes — $1 once, forever. We set the price this way intentionally. Developer tools should be accessible to every developer, not just those at well-funded companies. One dollar buys you permanent, unlimited access. No subscription, no annual renewal, no usage caps.",
   },
   {
-    q: 'Does Hot Reload actually work?',
-    a: "Yes. It connects to Flutter's existing hot reload mechanism. Hit save and see your changes in under a second.",
+    q: 'Does Hot Reload actually work inside the panel?',
+    a: "Yes — and this is the core value of the extension. Flutter Web Emulator hooks directly into Flutter's existing hot reload mechanism. Save your file (Ctrl+S) and you'll see changes reflected in the in-editor panel in under one second. State is preserved between hot reloads, exactly as it is in Flutter's native hot reload behavior.",
   },
   {
-    q: "What's the 3-day trial like?",
-    a: "Full access, no restrictions, no credit card needed. After 3 days, sessions are limited to 30 minutes in the free tier.",
+    q: "What's the difference between the trial and the free tier?",
+    a: "The 3-day trial gives you full, unrestricted Pro access — unlimited session time, all device simulation profiles, full hot reload. No credit card needed. After 3 days, the free tier limits preview sessions to 30 minutes before requiring a manual restart. Pro removes all time limits for $1 one-time.",
   },
 ]
 

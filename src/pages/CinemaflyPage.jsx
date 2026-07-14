@@ -30,11 +30,11 @@ const buildStory = [
 ]
 
 const faqs = [
-  { q: 'Is Cinemafly free?', a: 'Cinemafly comes with a 3-day free trial granting full Pro access. After the trial, the free tier includes basic playback with some session limitations. Pro is a one-time $4.99 purchase for unlimited lifetime access.' },
-  { q: 'Do I need to download codecs?', a: 'No. Cinemafly has all necessary codecs built-in. It plays HEVC, MKV, AV1, MP4, WebM, and almost any other format right out of the box.' },
-  { q: 'Is it better than VLC?', a: 'While VLC is a great tool, Cinemafly is designed specifically for modern Windows users. It offers similar format support but wraps it in a significantly more beautiful, intuitive, and native-feeling user interface.' },
-  { q: 'Can it cast to my TV?', a: 'We are currently optimizing the DLNA and Chromecast casting engine, which will be available in an upcoming free update for all Pro users.' },
-  { q: "What's included in the 3-day trial?", a: "The trial gives you 100% full Pro access with no restrictions. No credit card is required to start." },
+  { q: 'Is Cinemafly free to try?', a: 'Yes. The 3-day trial gives you full, unrestricted Pro access — every feature, no credit card required. After the trial you can continue with the free tier (basic playback with session limits) or upgrade to Pro with a one-time $4.99 payment for lifetime unlimited access. No subscriptions, ever.' },
+  { q: 'Do I need to install codecs separately?', a: 'No — and this is one of the biggest advantages over alternatives. Cinemafly ships with every codec pre-installed: HEVC/H.265, AV1, MKV, VP9, MP4, WebM, FLAC, and more. Install once, play anything. No hunting for codec packs, no error messages.' },
+  { q: 'How does it compare to VLC or Windows Media Player?', a: "VLC is powerful but built for technicians. Windows Media Player is outdated. Cinemafly is built specifically for modern Windows 11 users who want world-class format support wrapped in a beautiful, polished interface. You get the same format breadth as VLC with none of the visual clutter, plus features like watch history, subtitle sync, and playlist management that feel native to Windows." },
+  { q: 'Is the $4.99 price really one-time?', a: 'Yes — one payment, lifetime access. No monthly subscription. No annual renewal. When you buy Pro you own it. All future updates within the Pro version are included at no extra cost. We believe great software should be affordable and permanent.' },
+  { q: 'What happens after the 3-day trial?', a: "After your trial ends, you're moved to the free tier automatically — no charge, no action required. The free tier lets you continue using Cinemafly for everyday playback with a few limitations. Upgrade to Pro whenever you're ready, directly from the app or via the Microsoft Store." },
 ]
 
 const CINEMAFLY_SCHEMA = {

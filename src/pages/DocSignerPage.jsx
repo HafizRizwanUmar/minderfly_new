@@ -29,11 +29,11 @@ const buildStory = [
 ]
 
 const faqs = [
-  { q: 'Is DocSigner free?', a: 'You get a 3-day full Pro trial, then you drop to the free tier (10 docs/month). Pro is a one-time $9.99 for lifetime unlimited access.' },
-  { q: 'Is it legally valid?', a: 'Yes, our PKI-based signatures comply with eIDAS (EU), ESIGN, UETA (US), and are legally recognized in 60+ countries.' },
-  { q: 'Does it work offline?', a: 'Yes, you can sign stored documents offline. Cloud sync and new certificate validation require internet.' },
-  { q: 'What certificate types are supported?', a: 'DigiCert, GlobalSign, Comodo, enterprise CAs. We also support smart cards, USB tokens, and HSM devices.' },
-  { q: 'What\'s the difference between trial and free tier?', a: 'The 3-day trial gives you full Pro unlimited access. After the trial, the free tier limits you to 10 documents/month with basic features.' },
+  { q: 'Is DocSigner legally valid?', a: 'Yes — and this is not a grey area. DocSigner uses Public Key Infrastructure (PKI) certificates to produce qualified digital signatures that comply with eIDAS (EU), ESIGN Act (US), and UETA (US). These signatures are legally recognized and court-admissible in 60+ countries. Each signed document embeds a tamper-evident certificate with an RFC 3161 trusted timestamp, proving the exact time of signing.' },
+  { q: 'What is the pricing model?', a: 'DocSigner offers a 3-day full Pro trial with no credit card required. After the trial, the free tier limits you to 10 document signings per month with basic features. Pro is a one-time $9.99 payment for unlimited lifetime access — no annual fee, no subscription, no hidden costs. One purchase covers you permanently, including all future updates.' },
+  { q: 'Can I sign documents offline?', a: "Yes. Once a certificate is imported, you can sign documents entirely offline. DocSigner does not require an internet connection to apply a signature. Internet is only needed for initial certificate validation from a CA (like DigiCert or GlobalSign) and for cloud sync features. Your signed documents are always stored locally first." },
+  { q: 'What certificate authorities are supported?', a: 'DocSigner integrates natively with DigiCert, GlobalSign, and Comodo. It also supports enterprise Certificate Authorities, smart card readers, USB hardware tokens (e.g. SafeNet, Gemalto), and HSM devices. If your organization has a private PKI infrastructure, our Enterprise integration guide covers custom CA configuration step by step.' },
+  { q: 'How is batch signing different from signing one at a time?', a: "Batch signing lets you queue hundreds of PDF documents and sign all of them in a single background job — each with its own unique certificate and audit trail. DocSigner generates a detailed batch report upon completion showing the success/failure status of every document. This is the feature that saves legal teams, HR departments, and finance teams hours of manual work every week." },
 ]
 
 const DOCSIGNER_SCHEMA = {

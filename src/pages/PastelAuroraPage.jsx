@@ -42,21 +42,20 @@ const features = [
 
 const faqs = [
   {
-    question: 'Is it really free?',
-    answer: 'Yes, 100% free. No account, no in-app purchases, no data collection.',
+    question: 'Is Pastel Aurora free?',
+    answer: 'Yes — fully free, forever. No account, no premium tier, no personal data collected. Chrome themes are cosmetic-only and require no sensitive permissions. Install from the Chrome Web Store in one click.',
   },
   {
     question: 'How do I install it?',
-    answer: "Click 'Add to Chrome' on the Web Store. Done in under 10 seconds.",
+    answer: "Visit the Pastel Aurora page on the Chrome Web Store and click 'Add to Chrome'. The soft pastel gradient applies to your browser instantly — no restart, no configuration, no sign-in required.",
   },
   {
-    question: 'Will it slow my browser?',
-    answer:
-      'Not at all. Chrome themes are purely visual — no scripts, no background processes.',
+    question: 'Will it affect my browser performance?',
+    answer: 'Zero impact. Chrome themes are static image assets applied to the browser frame — toolbars, tab strip, and background. They run no JavaScript, consume no CPU cycles after load, and add no memory overhead. Your browser runs exactly as fast as before.',
   },
   {
-    question: 'Can I switch back to my old theme?',
-    answer: 'Yes. Chrome › Settings › Appearance › Reset to default, anytime.',
+    question: 'Can I uninstall or change themes anytime?',
+    answer: 'Yes, completely. Open Chrome Settings → Appearance → Reset to default to remove the theme instantly. Or install any other Chrome theme and it will automatically replace Pastel Aurora.',
   },
 ];
 

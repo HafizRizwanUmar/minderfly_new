@@ -37,21 +37,20 @@ const features = [
 
 const faqs = [
   {
-    question: 'Is it really free?',
-    answer: 'Yes, 100% free. No account, no in-app purchases, no data collection.',
+    question: 'Is Lunar Leap Theme free?',
+    answer: 'Yes — completely free, with no strings attached. No account required, no in-app purchases, no data collection of any kind. Chrome themes are passive visual overlays. Install it in one click from the Chrome Web Store and it works immediately.',
   },
   {
     question: 'How do I install it?',
-    answer: "Click 'Add to Chrome' on the Web Store. Done in under 10 seconds.",
+    answer: "Visit the Chrome Web Store page and click 'Add to Chrome'. The theme applies instantly — no browser restart needed. The entire install takes under 10 seconds.",
   },
   {
-    question: 'Will it slow my browser?',
-    answer:
-      'Not at all. Chrome themes are purely visual — no scripts, no background processes.',
+    question: 'Will it affect browser performance or battery life?',
+    answer: 'Not at all. Chrome themes are purely visual — they change the colors and textures of browser chrome UI (toolbars, tabs, frame). They contain no JavaScript, run no background processes, and consume zero additional CPU or memory. There is no performance impact whatsoever.',
   },
   {
-    question: 'Can I switch back to my old theme?',
-    answer: 'Yes. Chrome › Settings › Appearance › Reset to default, anytime.',
+    question: 'Can I revert to my old theme?',
+    answer: 'Yes, easily. Go to Chrome Settings → Appearance → Reset to default, and your previous theme is restored immediately. You can also switch between installed themes at any time without uninstalling.',
   },
 ];
 

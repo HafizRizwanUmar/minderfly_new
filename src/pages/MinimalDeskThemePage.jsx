@@ -31,22 +31,20 @@ const features = [
 
 const faqs = [
   {
-    question: 'Is it really free?',
-    answer: 'Yes, 100% free. No account, no in-app purchases, no data collection.',
+    question: 'Is Minimal Desk Theme free?',
+    answer: 'Yes — completely free, permanently. No sign-up, no premium tier, no data collection. Chrome themes require no permissions and access no browser data. Install it from the Chrome Web Store in one click.',
   },
   {
     question: 'How do I install it?',
-    answer: "Click 'Add to Chrome' on the Web Store. Done in under 10 seconds.",
+    answer: "Go to the Chrome Web Store page for Minimal Desk Theme and click 'Add to Chrome'. The theme applies instantly — your browser toolbar, tab bar, and new tab background update immediately. No restart, no setup.",
   },
   {
-    question: 'Will it slow my browser?',
-    answer:
-      'Not at all. Chrome themes are purely visual — no scripts, no background processes.',
+    question: 'Will it slow down Chrome?',
+    answer: 'No — not even slightly. Chrome themes are static visual assets that change the appearance of browser UI elements. They contain zero JavaScript, spawn no processes, make no network requests, and use no CPU or memory. There is absolutely no performance difference between a themed and un-themed browser.',
   },
   {
-    question: 'Can I switch back to my old theme?',
-    answer:
-      'Yes. Chrome › Settings › Appearance › Reset to default, anytime.',
+    question: 'Can I switch back to my default Chrome look?',
+    answer: 'Anytime. Go to Chrome Settings → Appearance → Reset to default. Your browser instantly returns to the standard look. You can also install a different theme at any time and it will automatically replace Minimal Desk.',
   },
 ];
 
