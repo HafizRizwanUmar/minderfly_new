@@ -53,8 +53,8 @@ export default function DocSignerPage() {
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
       <SEOHead
-        title="DocSigner — PDF Digital Signature Software for Windows | eIDAS Compliant"
-        description="Sign PDFs digitally with PKI-based signatures legally recognized in 60+ countries. eIDAS, ESIGN & UETA compliant. Batch sign hundreds of PDFs. Lifetime $9.99. 3-day free trial."
+        title="DocSigner — PDF Digital Signature Software for Windows | eIDAS & ESIGN Compliant"
+        description="Sign PDFs with legally valid PKI digital signatures on Windows. eIDAS, ESIGN, UETA compliant. Recognized in 60+ countries. Batch sign hundreds of PDFs. One-time $9.99 lifetime — 3-day free trial. No subscription."
         canonical="https://minderfly.com/products/docsigner"
         schema={DOCSIGNER_SCHEMA}
       />

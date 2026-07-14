@@ -53,8 +53,8 @@ export default function SanadPdfEditorPage() {
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
       <SEOHead
-        title="Sanad PDF Editor — Edit PDFs on Windows | $9.99 Lifetime | Adobe Acrobat Alternative"
-        description="Edit PDF text, images, and pages on Windows. OCR, digital signatures, page merging. No subscription — $9.99 one-time lifetime purchase. 3-day free trial. Better than Adobe Acrobat for most users."
+        title="Sanad PDF Editor — Best Adobe Acrobat Alternative for Windows | $9.99 Lifetime"
+        description="Edit PDF text, images, pages and forms on Windows. OCR for scanned PDFs. Built-in digital signatures. A powerful Adobe Acrobat alternative at a one-time $9.99 lifetime price — no subscription. 3-day free trial."
         canonical="https://minderfly.com/products/sanad-pdf-editor"
         schema={SANAD_SCHEMA}
       />

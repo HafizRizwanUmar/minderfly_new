@@ -54,8 +54,8 @@ export default function CinemaflyPage() {
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
       <SEOHead
-        title="Cinemafly — Video Player for Windows 11 | MKV, HEVC, AV1 Support"
-        description="Play any video on Windows 11. Cinemafly plays MKV, HEVC, AV1 and 50+ formats with GPU hardware acceleration. Beautiful cinematic UI. Better than VLC. 3-day free trial, Pro $4.99."
+        title="Cinemafly — Best Video Player for Windows 11 | MKV, HEVC, AV1 | Free Trial"
+        description="Cinemafly is a beautiful Windows media player that plays MKV, HEVC, AV1, MP4, WebM without installing extra codecs. Subtitle support, playlist, watch history. One-time $4.99 lifetime — 3-day free trial."
         canonical="https://minderfly.com/products/cinemafly"
         schema={CINEMAFLY_SCHEMA}
       />

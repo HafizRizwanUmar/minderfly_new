@@ -110,8 +110,8 @@ export default function AllProductsPage() {
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)' }}>
       <SEOHead
-        title="All Products — Minderfly | Desktop, Web & Extensions"
-        description="Browse all Minderfly products — desktop apps, web apps, VS Code extensions, and Chrome themes used in 100+ countries."
+        title="All Minderfly Products — PDF Tools, LMS, VS Code Extensions & Chrome Themes"
+        description="Browse all Minderfly software products: DocSigner (PDF digital signatures), Sanad PDF Editor, InklessLMS, Cinemafly media player, Flutter Web Emulator VS Code extension, and Chrome themes. Used in 100+ countries."
         canonical="https://minderfly.com/all-products"
       />
 

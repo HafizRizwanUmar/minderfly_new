@@ -242,8 +242,8 @@ export default function MinimalDeskThemePage() {
   return (
     <div style={{ background: 'var(--white)', minHeight: '100vh' }}>
       <SEOHead
-        title="Minimal Desk Theme — Free Minimal Chrome Browser Theme | Productivity"
-        description="A clean, minimal Chrome browser theme designed to disappear into your workflow. Soft greys, warm whites, desk-inspired textures. Free forever. Install in 10 seconds."
+        title="Minimal Desk Theme — Clean Chrome Browser Theme for Focused Work"
+        description="A minimal, distraction-free Chrome browser theme for developers and professionals who want a clean workspace. Subtle design, zero performance impact. Free on the Chrome Web Store."
         canonical="https://minderfly.com/products/minimal-desk-theme"
       />
       {/* ── HERO ── */}

@@ -496,8 +496,8 @@ export default function FlutterEmulatorPage() {
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)' }}>
       <SEOHead
-        title="Flutter Web Emulator — VS Code Extension | Preview Flutter App in Editor | $1 Lifetime"
-        description="Stop switching between VS Code and Chrome. Preview your Flutter web app live inside VS Code with hot reload, device simulation, and zero configuration. $1 one-time lifetime access."
+        title="Flutter Web Emulator — VS Code Extension | Live Flutter Preview in Editor"
+        description="Preview your Flutter web app live inside VS Code without opening a browser. Hot Reload support, device simulation, zero configuration. Install from VS Code Marketplace. $1 one-time lifetime — 3-day free trial."
         canonical="https://minderfly.com/products/flutter-web-emulator"
         schema={{
           '@context': 'https://schema.org',

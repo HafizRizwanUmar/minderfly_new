@@ -268,8 +268,8 @@ export default function InklessLmsPage() {
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)' }}>
       <SEOHead
-        title="InklessLMS — Cloud Learning Management System for Schools & Institutions"
-        description="A powerful, easy-to-use LMS trusted by 500+ institutions and 50K+ students. Drag-and-drop course builder, video lessons, AI assistant, live classes. Start free at inklesslms.com."
+        title="InklessLMS — Online Learning Management System for Educators & Schools"
+        description="InklessLMS is a cloud-based LMS platform for teachers and institutions. Create courses, track students, issue certificates, run live sessions. Mobile apps for iOS and Android. Start free — no credit card needed."
         canonical="https://minderfly.com/products/inkless-lms"
         schema={{
           '@context': 'https://schema.org',

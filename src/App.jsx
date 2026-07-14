@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import SEOHead from './components/SEOHead'
+import WhatsAppButton from './components/WhatsAppButton'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import ProductsSection from './components/ProductsSection'
@@ -53,8 +54,8 @@ function HomePage() {
   return (
     <main id="main-content">
       <SEOHead
-        title="Minderfly — We Build & Scale Startups Worldwide"
-        description="Turn your startup idea into a real product. Minderfly builds software used in 100+ countries. Desktop apps, mobile apps, web apps, VS Code extensions. 3-day free trials."
+        title="Minderfly — Software Studio | Build & Scale Startup Products"
+        description="Minderfly is a software studio that builds startup products used in 100+ countries. PDF editors, digital signature tools, LMS platforms, VS Code extensions, Chrome themes. 3-day free trials on all apps."
         canonical="https://minderfly.com/"
         schema={HOME_SCHEMA}
       />
@@ -97,6 +98,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

@@ -255,8 +255,8 @@ export default function PastelAuroraPage() {
   return (
     <div style={{ background: 'var(--white)', minHeight: '100vh' }}>
       <SEOHead
-        title="Pastel Aurora — Free Pastel Gradient Chrome Browser Theme | Aesthetic & Colorful"
-        description="Transform your Chrome browser with soft pink, lavender, mint, and sky blue aurora gradients. Mood-lifting, psychologically calming pastel colors. Free Chrome extension. Install instantly."
+        title="Pastel Aurora — Soft Pastel Chrome Theme | Free Browser Theme"
+        description="Transform your Chrome browser with soft pastel aurora gradients. A calming, beautiful theme for everyday browsing. Free on the Chrome Web Store. No account needed, zero performance impact."
         canonical="https://minderfly.com/products/pastel-aurora"
       />
       {/* ── HERO ── */}

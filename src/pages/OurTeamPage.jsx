@@ -63,8 +63,8 @@ export default function OurTeamPage() {
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)' }}>
       <SEOHead
-        title="Our Team — Minderfly"
-        description="Meet the three-person team behind Minderfly — building startup software used across 100+ countries."
+        title="Our Team — Minderfly | Software Studio Founded in Pakistan"
+        description="Meet the three-person team behind Minderfly — a software studio that has built and shipped products used in 100+ countries. Founder, Lead Designer, and Engineering Manager."
         canonical="https://minderfly.com/our-values/team"
       />
 

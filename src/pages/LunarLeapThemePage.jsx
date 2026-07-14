@@ -334,8 +334,8 @@ export default function LunarLeapThemePage() {
   return (
     <div style={{ background: 'var(--white)', minHeight: '100vh' }}>
       <SEOHead
-        title="Lunar Leap Theme — Free Dark Space Chrome Browser Theme | Night Mode"
-        description="A dark cosmic Chrome theme with deep space black, cosmic purple, lunar silver, and star gold. Built dark-first for night owls and late-night coders. Free Chrome extension. Install now."
+        title="Lunar Leap Theme — Dark Space Chrome Browser Theme | Free"
+        description="Give Chrome a sleek dark space aesthetic with Lunar Leap Theme. Deep tones, cosmic atmosphere, zero performance impact. Free on the Chrome Web Store. Install in one click — no account needed."
         canonical="https://minderfly.com/products/lunar-leap-theme"
       />
       {/* ── HERO ── */}
