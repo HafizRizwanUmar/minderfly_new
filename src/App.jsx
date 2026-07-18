@@ -23,6 +23,8 @@ import FlutterEmulatorPage from './pages/FlutterEmulatorPage'
 import MinimalDeskThemePage from './pages/MinimalDeskThemePage'
 import PastelAuroraPage from './pages/PastelAuroraPage'
 import LunarLeapThemePage from './pages/LunarLeapThemePage'
+import MuhasbaPage from './pages/MuhasbaPage'
+import MuhasbaPrivacyPage from './pages/MuhasbaPrivacyPage'
 
 // Values Pages
 import OurCommitmentPage from './pages/OurCommitmentPage'
@@ -85,6 +87,8 @@ function App() {
         <Route path="/products/minimal-desk-theme" element={<MinimalDeskThemePage />} />
         <Route path="/products/pastel-aurora" element={<PastelAuroraPage />} />
         <Route path="/products/lunar-leap-theme" element={<LunarLeapThemePage />} />
+        <Route path="/products/muhasba" element={<MuhasbaPage />} />
+        <Route path="/products/muhasba/privacy" element={<MuhasbaPrivacyPage />} />
         <Route path="/our-values/our-commitment" element={<OurCommitmentPage />} />
         <Route path="/our-values/team" element={<OurTeamPage />} />
         <Route path="/our-values/privacy" element={<PrivacyPage />} />
