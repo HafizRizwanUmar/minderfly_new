@@ -13,6 +13,9 @@ const FOOTER_LINKS = {
     { label: 'SanadPdf Editor', href: '/products/sanad-pdf-editor' },
     { label: 'InklessLMS', href: '/products/inkless-lms' },
   ],
+  'Mobile Apps': [
+    { label: 'Muhasba', href: '/products/muhasba' },
+  ],
   'Extensions & Themes': [
     { label: 'Flutter Web Emulator', href: '/products/flutter-web-emulator' },
     { label: 'Minimal Desk Theme', href: '/products/minimal-desk-theme' },

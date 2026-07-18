@@ -31,6 +31,12 @@ const NAV_ITEMS = [
             ]
           },
           {
+            title: 'Mobile Applications',
+            links: [
+              { label: 'Muhasba', href: '/products/muhasba' },
+            ]
+          },
+          {
             title: 'Extensions',
             links: [
               { label: 'Flutter Web Emulator', href: '/products/flutter-web-emulator' },
