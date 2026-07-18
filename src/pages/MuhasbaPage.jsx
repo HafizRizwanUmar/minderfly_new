@@ -10,7 +10,7 @@ import {
 
 /* ─── Muhasba App ────────────────────────────────────────────────────────────
    Nature: Premium Islamic Lifestyle & Daily Reflection App
-   Hero: Website's standard light theme, but the phone mockup remains dark/gold
+   Hero: Website's standard light theme with Google-esque brand colors
 ───────────────────────────────────────────────────────────────────────────── */
 
 const PLAY_STORE_URL = '#'
@@ -52,13 +52,13 @@ export default function MuhasbaPage() {
           
           {/* Left — content */}
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--text-primary)', borderRadius: '100px', padding: '6px 16px', fontSize: '12px', fontWeight: '700', color: 'var(--white)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '32px', width: 'fit-content' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--google-blue-600)', borderRadius: '100px', padding: '6px 16px', fontSize: '12px', fontWeight: '700', color: 'var(--white)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '32px', width: 'fit-content' }}>
               <Smartphone size={14} style={{marginTop: '-2px'}} /> Mobile App
             </div>
 
             <h1 style={{ fontSize: 'clamp(2.8rem, 4vw, 4.5rem)', fontWeight: '800', lineHeight: '1.05', letterSpacing: '-1.5px', color: 'var(--text-primary)', marginBottom: '24px' }}>
               Your Guide for <br />
-              <span style={{ color: '#D4AF37' }}>Sacred Journeys.</span>
+              <span style={{ color: 'var(--google-blue-600)' }}>Sacred Journeys.</span>
             </h1>
 
             <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.7', maxWidth: '480px', marginBottom: '40px' }}>
@@ -72,7 +72,7 @@ export default function MuhasbaPage() {
             </div>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="gfe-button gfe-button--primary" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px', background: '#D4AF37', color: '#000000', border: 'none' }}>
+              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="gfe-button gfe-button--primary" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
                 Download on Google Play
               </a>
               <Link to="/products/muhasba/privacy" className="gfe-button gfe-button--outline" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
@@ -81,61 +81,61 @@ export default function MuhasbaPage() {
             </div>
           </div>
 
-          {/* Right — Glassmorphism Phone Mockup (Kept dark to represent the actual app) */}
+          {/* Right — Glassmorphism Phone Mockup (Now using website's light theme colors) */}
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{ 
               width: '300px',
               height: '620px',
-              background: '#0a0a0c', 
+              background: 'var(--white)', 
               borderRadius: '40px', 
-              border: '2px solid rgba(212,175,55,0.4)',
-              boxShadow: '0 24px 80px rgba(0,0,0,0.2)',
+              border: '1px solid var(--border-color)',
+              boxShadow: 'var(--shadow-2)',
               position: 'relative',
               display: 'flex',
               flexDirection: 'column',
               overflow: 'hidden'
             }}>
               {/* Phone Notch */}
-              <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '120px', height: '24px', background: '#000000', borderBottomLeftRadius: '16px', borderBottomRightRadius: '16px', zIndex: 10 }}></div>
+              <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '120px', height: '24px', background: 'var(--grey-200)', borderBottomLeftRadius: '16px', borderBottomRightRadius: '16px', zIndex: 10 }}></div>
               
               {/* App UI Mockup */}
-              <div style={{ flex: 1, padding: '40px 20px 20px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div style={{ flex: 1, padding: '40px 20px 20px', display: 'flex', flexDirection: 'column', gap: '20px', background: 'var(--grey-50)' }}>
                 <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                  <div style={{ fontSize: '14px', color: '#D4AF37', fontWeight: '600', letterSpacing: '2px', textTransform: 'uppercase' }}>Fajr</div>
-                  <div style={{ fontSize: '48px', color: '#FFFFFF', fontWeight: '300', fontFamily: 'var(--font-display)', margin: '8px 0' }}>05:12</div>
-                  <div style={{ fontSize: '13px', color: '#A1A1AA' }}>Next prayer in 2h 14m</div>
+                  <div style={{ fontSize: '14px', color: 'var(--google-blue-600)', fontWeight: '600', letterSpacing: '2px', textTransform: 'uppercase' }}>Fajr</div>
+                  <div style={{ fontSize: '48px', color: 'var(--text-primary)', fontWeight: '300', fontFamily: 'var(--font-display)', margin: '8px 0' }}>05:12</div>
+                  <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>Next prayer in 2h 14m</div>
                 </div>
 
                 {/* Cards */}
-                <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ background: 'rgba(212,175,55,0.15)', padding: '12px', borderRadius: '12px', color: '#D4AF37' }}><Compass size={24} /></div>
+                <div style={{ background: 'var(--white)', border: '1px solid var(--border-color)', borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', gap: '16px', boxShadow: 'var(--shadow-1)' }}>
+                  <div style={{ background: 'var(--google-blue-100)', padding: '12px', borderRadius: '12px', color: 'var(--google-blue-600)' }}><Compass size={24} /></div>
                   <div>
-                    <div style={{ fontSize: '15px', color: '#FFFFFF', fontWeight: '600' }}>Qibla Direction</div>
-                    <div style={{ fontSize: '13px', color: '#A1A1AA' }}>281° NW</div>
+                    <div style={{ fontSize: '15px', color: 'var(--text-primary)', fontWeight: '600' }}>Qibla Direction</div>
+                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>281° NW</div>
                   </div>
                 </div>
 
-                <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ background: 'rgba(212,175,55,0.15)', padding: '12px', borderRadius: '12px', color: '#D4AF37' }}><Activity size={24} /></div>
+                <div style={{ background: 'var(--white)', border: '1px solid var(--border-color)', borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', gap: '16px', boxShadow: 'var(--shadow-1)' }}>
+                  <div style={{ background: 'var(--google-blue-100)', padding: '12px', borderRadius: '12px', color: 'var(--google-blue-600)' }}><Activity size={24} /></div>
                   <div>
-                    <div style={{ fontSize: '15px', color: '#FFFFFF', fontWeight: '600' }}>Daily Jaiza</div>
-                    <div style={{ fontSize: '13px', color: '#A1A1AA' }}>3/5 Prayers Logged</div>
+                    <div style={{ fontSize: '15px', color: 'var(--text-primary)', fontWeight: '600' }}>Daily Jaiza</div>
+                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>3/5 Prayers Logged</div>
                   </div>
                 </div>
               </div>
               
               {/* Bottom Nav */}
-              <div style={{ height: '60px', background: '#111111', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '0 10px' }}>
-                <div style={{ color: '#D4AF37' }}><Clock size={20} /></div>
-                <div style={{ color: '#A1A1AA' }}><BookOpen size={20} /></div>
-                <div style={{ color: '#A1A1AA' }}><SmartphoneNfc size={20} /></div>
-                <div style={{ color: '#A1A1AA' }}><Activity size={20} /></div>
+              <div style={{ height: '60px', background: 'var(--white)', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '0 10px' }}>
+                <div style={{ color: 'var(--google-blue-600)' }}><Clock size={20} /></div>
+                <div style={{ color: 'var(--grey-400)' }}><BookOpen size={20} /></div>
+                <div style={{ color: 'var(--grey-400)' }}><SmartphoneNfc size={20} /></div>
+                <div style={{ color: 'var(--grey-400)' }}><Activity size={20} /></div>
               </div>
             </div>
 
             {/* Floating feature badge */}
             <div style={{ position: 'absolute', bottom: '20px', right: '-20px', background: 'var(--white)', borderRadius: '16px', padding: '16px 24px', boxShadow: '0 12px 32px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', gap: '12px', border: '1px solid var(--border-color)' }}>
-              <div style={{ fontSize: '24px' }}><ShieldCheck size={24} color="#D4AF37" /></div>
+              <div style={{ fontSize: '24px' }}><ShieldCheck size={24} color="var(--google-green)" /></div>
               <div>
                 <div style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: '600' }}>Privacy First</div>
                 <div style={{ fontSize: '14px', color: 'var(--text-primary)', fontWeight: '800' }}>100% Ad-Free</div>
@@ -148,7 +148,7 @@ export default function MuhasbaPage() {
       {/* ══ THE CHALLENGE ══════════════════════════════════════════════════════ */}
       <section style={{ padding: '100px 24px', background: 'var(--grey-50)', borderTop: '1px solid var(--border-color)' }}>
         <div className="gfe-container" style={{ maxWidth: '800px', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(212,175,55,0.1)', color: '#D4AF37', marginBottom: '24px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '50%', background: 'var(--google-blue-100)', color: 'var(--google-blue-600)', marginBottom: '24px' }}>
             <Star size={24} />
           </div>
           <h2 className="gfe-headline-2" style={{ marginBottom: '24px' }}>The Challenge</h2>
@@ -170,7 +170,7 @@ export default function MuhasbaPage() {
               <div key={i} style={{ padding: '32px', background: 'var(--white)', border: '1px solid var(--border-color)', borderRadius: '16px', transition: 'box-shadow 0.2s, transform 0.2s' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = 'var(--shadow-2)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)' }}>
-                <div style={{ color: '#D4AF37', marginBottom: '20px', fontSize: '2.2rem' }}>{f.icon}</div>
+                <div style={{ color: 'var(--google-blue-600)', marginBottom: '20px', fontSize: '2.2rem' }}>{f.icon}</div>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '10px' }}>{f.title}</h3>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.9rem' }}>{f.desc}</p>
               </div>
@@ -186,26 +186,26 @@ export default function MuhasbaPage() {
             
             {/* Design & Typography */}
             <div style={{ flex: 1, padding: '32px', background: 'var(--white)', borderRadius: '24px', border: '1px solid var(--border-color)' }}>
-              <div style={{ color: '#D4AF37', marginBottom: '20px' }}><Layout size={32} /></div>
+              <div style={{ color: 'var(--google-blue-600)', marginBottom: '20px' }}><Layout size={32} /></div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '16px' }}>Design & Typography</h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '24px' }}>
                 We believe spiritual apps should feel elegant and calm. We crafted a cohesive visual hierarchy using hand-picked typography:
               </p>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px', listStyle: 'none', padding: 0 }}>
                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <Check size={20} color="#D4AF37" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <Check size={20} color="var(--google-green)" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div><strong style={{ color: 'var(--text-primary)' }}>Outfit:</strong> Clean, modern sans-serif for main UI components.</div>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <Check size={20} color="#D4AF37" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <Check size={20} color="var(--google-green)" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div><strong style={{ color: 'var(--text-primary)' }}>Lora:</strong> Elegant serif for English headings and reflection quotes.</div>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <Check size={20} color="#D4AF37" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <Check size={20} color="var(--google-green)" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div><strong style={{ color: 'var(--text-primary)' }}>Cairo:</strong> Crisp and highly legible Arabic UI text.</div>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <Check size={20} color="#D4AF37" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <Check size={20} color="var(--google-green)" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div><strong style={{ color: 'var(--text-primary)' }}>Amiri:</strong> Beautiful, traditional Naskh script for Quranic text and Duas.</div>
                 </li>
               </ul>
@@ -213,22 +213,22 @@ export default function MuhasbaPage() {
 
             {/* Tech Stack */}
             <div style={{ flex: 1, padding: '32px', background: 'var(--white)', borderRadius: '24px', border: '1px solid var(--border-color)' }}>
-              <div style={{ color: '#D4AF37', marginBottom: '20px' }}><Database size={32} /></div>
+              <div style={{ color: 'var(--google-blue-600)', marginBottom: '20px' }}><Database size={32} /></div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '16px' }}>Under the Hood</h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '24px' }}>
                 Performance and privacy were our top priorities. The app is built to run flawlessly without compromising user data.
               </p>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px', listStyle: 'none', padding: 0 }}>
                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <Check size={20} color="#D4AF37" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <Check size={20} color="var(--google-green)" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div><strong style={{ color: 'var(--text-primary)' }}>Flutter & Dart:</strong> A unified, cross-platform codebase ensuring smooth 60fps animations on both iOS and Android.</div>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <Check size={20} color="#D4AF37" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <Check size={20} color="var(--google-green)" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div><strong style={{ color: 'var(--text-primary)' }}>Local Storage:</strong> All user data (Tasbeeh counts, Jaiza reflections) is saved entirely offline via Shared Preferences. No servers.</div>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <Check size={20} color="#D4AF37" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <Check size={20} color="var(--google-green)" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div><strong style={{ color: 'var(--text-primary)' }}>Background Services:</strong> Advanced local notification scheduling guarantees Adhan alerts trigger precisely on time without requiring constant active internet.</div>
                 </li>
               </ul>
@@ -246,7 +246,7 @@ export default function MuhasbaPage() {
             Experience the most beautiful, privacy-first Islamic app available. Free forever.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="gfe-button" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px', background: '#D4AF37', color: '#000000', fontWeight: '700', border: 'none' }}>
+            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="gfe-button gfe-button--primary" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
               Download for Android
             </a>
             <Link to="/products/muhasba/privacy" className="gfe-button gfe-button--outline" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
