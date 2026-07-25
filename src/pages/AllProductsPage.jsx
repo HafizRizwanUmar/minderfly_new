@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SEOHead from '../components/SEOHead'
-import cinemaflyLogo from '../assets/product logos/cinemafly.png'
-import docsignerLogo from '../assets/product logos/docsigner.png'
-import sanadLogo from '../assets/product logos/sanad.png'
 import inklessLogo from '../assets/product logos/inkless.png'
 import emulatorLogo from '../assets/product logos/Emulator.png'
 import lunarLogo from '../assets/product logos/lunar.png'
 import minimalLogo from '../assets/product logos/minimal.png'
 import pastelLogo from '../assets/product logos/pastel.png'
+import { getAllProducts } from '../data/products'
 
-const CATEGORIES = ['All', 'Desktop Apps', 'Web Apps', 'Extensions', 'Themes']
+const CATEGORIES = ['All', 'Desktop Apps', 'Mobile Apps', 'Web Apps', 'Extensions', 'Themes']
 
 const PRODUCTS = [
   {
     name: 'Cinemafly',
-    img: cinemaflyLogo,
+    img: '/products/logo/cinemafly (2).png',
     link: '/products/cinemafly',
     category: 'Desktop Apps',
     platform: 'Windows',
@@ -24,7 +22,7 @@ const PRODUCTS = [
   },
   {
     name: 'DocSigner',
-    img: docsignerLogo,
+    img: '/products/logo/docsigner (2).png',
     link: '/products/docsigner',
     category: 'Desktop Apps',
     platform: 'Windows',
@@ -33,7 +31,7 @@ const PRODUCTS = [
   },
   {
     name: 'Sanad PDF Editor',
-    img: sanadLogo,
+    img: '/products/logo/sanad.png',
     link: '/products/sanad-pdf-editor',
     category: 'Desktop Apps',
     platform: 'Windows',
@@ -87,11 +85,28 @@ const PRODUCTS = [
   },
 ]
 
+const dataProducts = getAllProducts()
+  .filter(p => !['cinemafly', 'docsigner', 'sanad'].includes(p.slug))
+  .map(p => ({
+    name: p.name,
+    img: p.logo,
+    link: `/products/${p.slug}`,
+    category: p.platforms.includes('iOS') || p.platforms.includes('Android') ? 'Mobile Apps' : 'Desktop Apps',
+    platform: p.platforms[0],
+    desc: p.shortDesc,
+    badge: p.platforms[0],
+  }));
+
+const ALL_PRODUCTS = [...PRODUCTS, ...dataProducts];
+
 const BADGE_COLOR = {
   Windows: { bg: '#EFF6FF', color: '#1D4ED8' },
   Web:     { bg: '#F0FDF4', color: '#15803D' },
   'VS Code': { bg: '#F5F3FF', color: '#6D28D9' },
   Chrome:  { bg: '#FFF7ED', color: '#C2410C' },
+  iOS:     { bg: '#F3F4F6', color: '#111827' },
+  Android: { bg: '#ECFDF5', color: '#059669' },
+  macOS:   { bg: '#F8FAFC', color: '#475569' },
 }
 
 const STATS = [
@@ -105,7 +120,7 @@ export default function AllProductsPage() {
   useEffect(() => { window.scrollTo(0, 0) }, [])
   const [active, setActive] = useState('All')
 
-  const filtered = active === 'All' ? PRODUCTS : PRODUCTS.filter(p => p.category === active)
+  const filtered = active === 'All' ? ALL_PRODUCTS : ALL_PRODUCTS.filter(p => p.category === active)
 
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)' }}>

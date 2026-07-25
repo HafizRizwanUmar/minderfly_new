@@ -1,8 +1,5 @@
 import { useRef, useEffect } from 'react';
-import cinemaflyLogo from '../assets/product logos/cinemafly.png'
-import docsignerLogo from '../assets/product logos/docsigner.png'
 import inklessLogo from '../assets/product logos/inkless.png'
-import sanadLogo from '../assets/product logos/sanad.png'
 import emulatorLogo from '../assets/product logos/Emulator.png'
 
 export default function SuiteSection() {
@@ -18,9 +15,11 @@ export default function SuiteSection() {
   }, []);
 
   const productLogos = [
-    { name: 'Cinemafly', src: cinemaflyLogo },
-    { name: 'DocSigner', src: docsignerLogo },
-    { name: 'SanadPdf Editor', src: sanadLogo },
+    { name: 'Cinemafly', src: '/products/logo/cinemafly (2).png' },
+    { name: 'DocSigner', src: '/products/logo/docsigner (2).png' },
+    { name: 'SanadPdf Editor', src: '/products/logo/sanad.png' },
+    { name: 'StoreFlow', src: '/products/logo/storeflow.png' },
+    { name: 'CivilCalc', src: '/products/logo/civil.png' },
     { name: 'InklessLMS', src: inklessLogo },
     { name: 'Flutter Web Emulator', src: emulatorLogo },
   ];

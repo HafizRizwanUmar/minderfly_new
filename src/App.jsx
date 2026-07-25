@@ -40,6 +40,9 @@ import AlmiraalPage from './pages/AlmiraalPage'
 import HowWeBuildPage from './pages/HowWeBuildPage'
 import NewsPage from './pages/NewsPage'
 import NotFoundPage from './pages/NotFoundPage'
+import ProductPage from './pages/ProductPage'
+import ProductNewsIndex from './pages/ProductNewsIndex'
+import ProductNewsArticle from './pages/ProductNewsArticle'
 
 const HOME_SCHEMA = {
   '@context': 'https://schema.org',
@@ -99,6 +102,10 @@ function App() {
         <Route path="/all-products" element={<AllProductsPage />} />
         <Route path="/how-we-build" element={<HowWeBuildPage />} />
         <Route path="/news" element={<NewsPage />} />
+        {/* Generic product data-driven routes (StoreFlow, DebtSettler, FrameFly, Pomofly, CivilCalc, Nishan + news for all) */}
+        <Route path="/products/:slug" element={<ProductPage />} />
+        <Route path="/products/:slug/news" element={<ProductNewsIndex />} />
+        <Route path="/products/:slug/news/:articleSlug" element={<ProductNewsArticle />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
