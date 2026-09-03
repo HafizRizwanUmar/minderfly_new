@@ -40,6 +40,56 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- ── News Articles ────────────────────────────────────────── -->
+  <url>
+    <loc>https://minderfly.com/news/100-plus-countries-milestone</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://minderfly.com/news/cinemafly-50000-downloads</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://minderfly.com/news/flutter-web-emulator-v2</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://minderfly.com/news/quran-academy-inklesslms</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://minderfly.com/news/building-for-external-founders</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://minderfly.com/news/docsigner-pro-batch-signing</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://minderfly.com/news/sanad-pdf-editor-35-countries</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://minderfly.com/news/dr-hammad-medical-education</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- ── Desktop & Web Products ───────────────────────────────── -->
   <url>
     <loc>https://minderfly.com/products/cinemafly</loc>
