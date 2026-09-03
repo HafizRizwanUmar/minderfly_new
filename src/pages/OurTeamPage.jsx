@@ -1,19 +1,21 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SEOHead from '../components/SEOHead'
+import hafizImg from '../assets/hafiz.png'
+import ammaraImg from '../assets/ammara.png'
 
 const TEAM = [
   {
     name: 'Hafiz Rizwan Umar',
     role: 'Founder & CEO',
     desc: 'Rizwan leads Minderfly with a focus on building software that solves real problems at scale. He oversees product strategy, engineering direction, and partnerships across 100+ countries.',
-    img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80',
+    img: hafizImg,
   },
   {
     name: 'Ammara Lohani',
     role: 'Lead Product Designer',
     desc: 'Ammara defines the visual language and user experience across all Minderfly products. She turns complex workflows into interfaces that feel effortless and delightful to use.',
-    img: 'https://images.unsplash.com/photo-1531123897727-8f129e1bf98a?auto=format&fit=crop&w=600&q=80',
+    img: ammaraImg,
   },
   {
     name: 'Eisha Ashfaq',
