@@ -61,10 +61,10 @@ export default function ServiceLocationPage() {
     );
   }
 
-  const title = \`\${service.titlePrefix} \${formattedCity} | Minderfly\`;
+  const title = `${service.titlePrefix} ${formattedCity} | Minderfly`;
   const description = service.desc.replace('{city}', formattedCity);
   const heroText = service.heroText.replace('{city}', formattedCity);
-  const url = \`https://minderfly.com/services/\${serviceSlug}/\${city}\`;
+  const url = `https://minderfly.com/services/${serviceSlug}/${city}`;
 
   const schema = {
     '@context': 'https://schema.org',
@@ -111,7 +111,7 @@ export default function ServiceLocationPage() {
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
             {[
-              { icon: service.icon, title: service.name, desc: \`World-class \${service.name.toLowerCase()} tailored to your specific business requirements.\` },
+              { icon: service.icon, title: service.name, desc: `World-class ${service.name.toLowerCase()} tailored to your specific business requirements.` },
               { icon: <CheckCircle size={32} />, title: 'Startup DNA', desc: 'We do not just write code; we help you architect the product, design the user experience, and plan for scale from day one.' },
               { icon: <Code size={32} />, title: 'Modern Tech Stack', desc: 'Built in-house using modern technologies like Flutter, React Native, React, Next.js, and Supabase.' }
             ].map((s, i) => (
