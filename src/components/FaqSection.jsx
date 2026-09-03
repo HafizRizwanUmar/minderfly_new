@@ -60,6 +60,25 @@ export default function FaqSection({ faqs, title, subtitle }) {
   const heading = title || 'Founder FAQs — answered'
   const body = subtitle || 'Curious about working with us? Here are the questions we hear most from founders.'
 
+  // ── Inject FAQPage JSON-LD schema for Google rich results ────────
+  useEffect(() => {
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: items.map(faq => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    }
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.setAttribute('data-faq-schema', 'true')
+    script.textContent = JSON.stringify(schema)
+    document.head.appendChild(script)
+    return () => { script.remove() }
+  }, [items])
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting)),

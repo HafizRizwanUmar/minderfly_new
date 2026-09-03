@@ -5,68 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ── Default Title & Description (overridden per-page by SEOHead) ── -->
-    <title>Minderfly — We Build & Scale Startups Worldwide</title>
-    <meta name="description" content="Turn your startup idea into a real product. Minderfly builds software used in 100+ countries. Desktop apps, mobile apps, web apps, and VS Code extensions. 3-day free trials." />
+    <title>Minderfly — Software Studio | Build & Scale Startup Products</title>
+    <meta name="description" content="Minderfly is a software studio that builds startup products used in 100+ countries. PDF editors, digital signature tools, LMS platforms, VS Code extensions, and Islamic apps. Built from Pakistan, used worldwide." />
 
-    <!-- ── Favicon ── -->
+    <!-- ── Favicon & Theme ── -->
     <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta name="theme-color" content="#1a73e8" />
+    <meta name="color-scheme" content="light" />
 
-    <!-- ── Open Graph (default, overridden by SEOHead per page) ── -->
+    <!-- ── Performance: DNS Prefetch + Preconnect ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <!-- ── Fonts ── -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Google+Sans:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+
+    <!-- ── Open Graph (default — overridden per-page by SEOHead) ── -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Minderfly" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Minderfly — We Build & Scale Startups Worldwide" />
-    <meta property="og:description" content="Turn your startup idea into a real product. Minderfly builds software used in 100+ countries." />
+    <meta property="og:title" content="Minderfly — Software Studio | Build & Scale Startup Products" />
+    <meta property="og:description" content="Minderfly builds software used in 100+ countries. PDF editors, LMS platforms, VS Code extensions, and Islamic apps. Free trials on all apps." />
     <meta property="og:image" content="https://minderfly.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://minderfly.com/" />
 
     <!-- ── Twitter Card (default) ── -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@minderfly" />
-    <meta name="twitter:title" content="Minderfly — We Build & Scale Startups Worldwide" />
-    <meta name="twitter:description" content="Turn your startup idea into a real product. Minderfly builds software used in 100+ countries." />
+    <meta name="twitter:creator" content="@minderfly" />
+    <meta name="twitter:title" content="Minderfly — Software Studio | Build & Scale Startup Products" />
+    <meta name="twitter:description" content="Minderfly builds software used in 100+ countries. PDF editors, LMS platforms, VS Code extensions, and Islamic apps." />
     <meta name="twitter:image" content="https://minderfly.com/og-image.png" />
 
-    <!-- ── Canonical (default) ── -->
+    <!-- ── Canonical & Robots (default) ── -->
     <link rel="canonical" href="https://minderfly.com/" />
-
-    <!-- ── Robots ── -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="Minderfly" />
+    <meta name="copyright" content="Minderfly" />
+    <meta name="keywords" content="software studio, startup products, PDF editor, digital signature, LMS, Flutter extension, Islamic app, Pakistan software company, Minderfly" />
 
-    <!-- ── Fonts ── -->
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Google+Sans:wght@400;500;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- ── Geo Tags (helps local SEO in Pakistan & global) ── -->
+    <meta name="geo.region" content="PK" />
+    <meta name="geo.placename" content="Pakistan" />
 
-    <!-- ── Default Organization JSON-LD ── -->
+    <!-- ── Organization JSON-LD ── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Minderfly",
       "url": "https://minderfly.com",
-      "logo": "https://minderfly.com/logo.png",
-      "description": "Minderfly is a software studio that builds and scales startup products used in 100+ countries worldwide.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://minderfly.com/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Minderfly is a software studio that builds and scales startup products — desktop apps, mobile apps, web apps, and browser extensions — used in 100+ countries worldwide.",
       "foundingDate": "2021",
+      "foundingLocation": "Pakistan",
+      "areaServed": "Worldwide",
+      "knowsAbout": ["Software Development", "Mobile App Development", "Desktop App Development", "LMS Platforms", "PDF Tools", "Developer Tools"],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
-        "url": "https://minderfly.com/contact"
+        "url": "https://minderfly.com/contact",
+        "availableLanguage": ["English", "Urdu"]
       },
-      "sameAs": []
+      "sameAs": [
+        "https://github.com/HafizRizwanUmar"
+      ]
     }
     </script>
 
-    <!-- ── Website with SearchAction JSON-LD ── -->
+    <!-- ── WebSite with Sitelinks SearchBox JSON-LD ── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Minderfly",
       "url": "https://minderfly.com",
+      "description": "Software studio building products used in 100+ countries.",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -77,6 +103,30 @@
       }
     }
     </script>
+
+    <!-- ── ItemList of Products JSON-LD ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Minderfly Software Products",
+      "url": "https://minderfly.com/all-products",
+      "numberOfItems": 10,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "DocSigner — Digital PDF Signature App", "url": "https://minderfly.com/products/docsigner" },
+        { "@type": "ListItem", "position": 2, "name": "Sanad PDF Editor — Windows PDF Editing", "url": "https://minderfly.com/products/sanad-pdf-editor" },
+        { "@type": "ListItem", "position": 3, "name": "Cinemafly — Movie Tracker for Windows", "url": "https://minderfly.com/products/cinemafly" },
+        { "@type": "ListItem", "position": 4, "name": "InklessLMS — Learning Management System", "url": "https://minderfly.com/products/inkless-lms" },
+        { "@type": "ListItem", "position": 5, "name": "Flutter Web Emulator — VS Code Extension", "url": "https://minderfly.com/products/flutter-web-emulator" },
+        { "@type": "ListItem", "position": 6, "name": "Muhasba — Islamic Lifestyle App for Android", "url": "https://minderfly.com/products/muhasba" },
+        { "@type": "ListItem", "position": 7, "name": "Minimal Desk Theme — VS Code Theme", "url": "https://minderfly.com/products/minimal-desk-theme" },
+        { "@type": "ListItem", "position": 8, "name": "Pastel Aurora — Chrome Theme", "url": "https://minderfly.com/products/pastel-aurora" },
+        { "@type": "ListItem", "position": 9, "name": "Lunar Leap Theme — VS Code Theme", "url": "https://minderfly.com/products/lunar-leap-theme" },
+        { "@type": "ListItem", "position": 10, "name": "Muhasba — Islamic App Privacy Policy", "url": "https://minderfly.com/products/muhasba/privacy" }
+      ]
+    }
+    </script>
+
   </head>
   <body>
     <div id="root"></div>

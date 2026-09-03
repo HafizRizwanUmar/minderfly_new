@@ -1,8 +1,13 @@
 User-agent: *
 Allow: /
 
+# Block non-content routes crawlers should not waste budget on
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /*.js$
+
+# Crawl-delay (optional, courtesy)
+Crawl-delay: 1
+
 # Sitemap location
 Sitemap: https://minderfly.com/sitemap.xml
-
-# Crawl-delay for courtesy (optional, most major crawlers ignore this)
-Crawl-delay: 1
