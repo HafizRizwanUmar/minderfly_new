@@ -8,7 +8,7 @@ import { NEWS } from '../data/news'
    Minderfly company news hub — product launches, milestones, founder stories
 ───────────────────────────────────────────────────────────────────────────── */
 
-const CATEGORIES = ['All', 'Product Updates', 'Company News', 'Founder Stories', 'Milestones']
+const CATEGORIES = ['All', 'How-To Guides', 'Product Updates', 'Company News', 'Founder Stories', 'Milestones']
 
 export default function NewsPage() {
   useEffect(() => { window.scrollTo(0, 0) }, [])
