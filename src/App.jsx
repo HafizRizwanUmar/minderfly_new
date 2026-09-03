@@ -44,6 +44,7 @@ import NotFoundPage from './pages/NotFoundPage'
 import ProductPage from './pages/ProductPage'
 import ProductNewsIndex from './pages/ProductNewsIndex'
 import ProductNewsArticle from './pages/ProductNewsArticle'
+import ServiceLocationPage from './pages/ServiceLocationPage'
 
 const HOME_SCHEMA = {
   '@context': 'https://schema.org',
@@ -104,6 +105,7 @@ function App() {
         <Route path="/how-we-build" element={<HowWeBuildPage />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/news/:slug" element={<NewsArticlePage />} />
+        <Route path="/services/mobile-app-development/:city" element={<ServiceLocationPage />} />
         {/* Generic product data-driven routes (StoreFlow, DebtSettler, FrameFly, Pomofly, CivilCalc, Nishan + news for all) */}
         <Route path="/products/:slug" element={<ProductPage />} />
         <Route path="/products/:slug/news" element={<ProductNewsIndex />} />
