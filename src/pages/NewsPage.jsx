@@ -1,87 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SEOHead from '../components/SEOHead'
+import { NEWS } from '../data/news'
 
 /* ─── News & Updates ────────────────────────────────────────────────────────
    Minderfly company news hub — product launches, milestones, founder stories
 ───────────────────────────────────────────────────────────────────────────── */
 
 const CATEGORIES = ['All', 'Product Updates', 'Company News', 'Founder Stories', 'Milestones']
-
-const NEWS = [
-  {
-    category: 'Milestones',
-    date: 'July 10, 2026',
-    tag: '100+ Countries',
-    title: 'Minderfly products now reach 100+ countries',
-    excerpt: 'We are proud to announce that our portfolio of software products is now actively used by people in over 100 countries. From DocSigner in legal firms across Europe to InklessLMS in schools across South Asia, our reach keeps growing.',
-    readTime: '3 min read',
-    featured: true,
-  },
-  {
-    category: 'Product Updates',
-    date: 'June 28, 2026',
-    tag: 'Cinemafly',
-    title: 'Cinemafly crosses 50,000 downloads on Microsoft Store',
-    excerpt: 'We shipped Cinemafly in late 2023 and it just hit 50,000 downloads — entirely organic, entirely community-driven. Film lovers on Reddit and Discord discovered it and never looked back. The AI recommendation engine is our most celebrated feature.',
-    readTime: '4 min read',
-    featured: true,
-  },
-  {
-    category: 'Product Updates',
-    date: 'June 15, 2026',
-    tag: 'Flutter Emulator',
-    title: 'Flutter Web Emulator v2.0 — device simulation is here',
-    excerpt: 'Version 2.0 of our VS Code extension is out. We\'ve added iPhone, iPad, and Pixel device frame simulation, improved hot reload stability, and dropped session time limits for Pro users. $1 lifetime — no brainer.',
-    readTime: '2 min read',
-    featured: false,
-  },
-  {
-    category: 'Founder Stories',
-    date: 'May 30, 2026',
-    tag: 'Founder Spotlight',
-    title: 'How Quran O Itrat Academy scaled their digital learning with InklessLMS',
-    excerpt: 'We sat down with the team at Quran O Itrat Academy to talk about how they moved 3,000+ students online using InklessLMS — and what they learned about running digital education at scale.',
-    readTime: '6 min read',
-    featured: false,
-  },
-  {
-    category: 'Company News',
-    date: 'May 12, 2026',
-    tag: 'Company',
-    title: 'Minderfly is now building for external founders',
-    excerpt: 'We\'ve built products for years. Now we\'re opening our capabilities to founders who have ideas and need a technical partner to turn them into reality. If you have a startup idea, we want to talk.',
-    readTime: '3 min read',
-    featured: false,
-  },
-  {
-    category: 'Product Updates',
-    date: 'April 22, 2026',
-    tag: 'DocSigner',
-    title: 'DocSigner Pro gets batch signing for unlimited documents',
-    excerpt: 'The most-requested feature is live. DocSigner Pro users can now batch-sign unlimited PDFs in a single job. Sign 500 contracts with one click. The batch engine runs in the background so you can keep working.',
-    readTime: '2 min read',
-    featured: false,
-  },
-  {
-    category: 'Milestones',
-    date: 'March 5, 2026',
-    tag: 'Sanad PDF Editor',
-    title: 'Sanad PDF Editor reaches 35 countries — a journey from a $9.99 idea',
-    excerpt: 'When we launched Sanad at $9.99 lifetime, we didn\'t know if anyone would buy a PDF editor from an unknown team. 35 countries later, we know the answer. Here\'s the story of how we built it and what surprised us.',
-    readTime: '5 min read',
-    featured: false,
-  },
-  {
-    category: 'Founder Stories',
-    date: 'February 18, 2026',
-    tag: 'Partner Story',
-    title: 'How Dr. Hammad Lakhvi built a digital medical education platform with us',
-    excerpt: 'Dr. Hammad came to us with a vision — bring medical education online in a way that preserves the rigor of traditional teaching. We built it. Here\'s how the project went from whiteboard to platform.',
-    readTime: '7 min read',
-    featured: false,
-  },
-]
 
 export default function NewsPage() {
   useEffect(() => { window.scrollTo(0, 0) }, [])
@@ -150,7 +76,7 @@ export default function NewsPage() {
           <div className="gfe-container">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '24px', marginBottom: '48px' }}>
               {featured.map((article, i) => (
-                <a key={i} href="#" style={{ textDecoration: 'none', display: 'block', background: 'var(--white)', border: '1px solid var(--border-color)', borderRadius: '20px', overflow: 'hidden', transition: 'box-shadow 0.2s, transform 0.2s' }}
+                <Link key={i} to={`/news/${article.slug}`} style={{ textDecoration: 'none', display: 'block', background: 'var(--white)', border: '1px solid var(--border-color)', borderRadius: '20px', overflow: 'hidden', transition: 'box-shadow 0.2s, transform 0.2s' }}
                   onMouseEnter={e => { e.currentTarget.style.boxShadow = 'var(--shadow-2)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
                   onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)' }}>
                   {/* Color banner */}
@@ -167,7 +93,7 @@ export default function NewsPage() {
                       <span style={{ color: 'var(--google-blue-600)', fontWeight: '600', fontSize: '14px' }}>Read more →</span>
                     </div>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -179,7 +105,7 @@ export default function NewsPage() {
         <div className="gfe-container">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {regular.map((article, i) => (
-              <a key={i} href="#" style={{ textDecoration: 'none', display: 'flex', gap: '24px', padding: '28px', background: 'var(--white)', border: '1px solid var(--border-color)', borderRadius: '16px', alignItems: 'flex-start', transition: 'box-shadow 0.2s, border-color 0.2s' }}
+              <Link key={i} to={`/news/${article.slug}`} style={{ textDecoration: 'none', display: 'flex', gap: '24px', padding: '28px', background: 'var(--white)', border: '1px solid var(--border-color)', borderRadius: '16px', alignItems: 'flex-start', transition: 'box-shadow 0.2s, border-color 0.2s' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = 'var(--shadow-1)'; e.currentTarget.style.borderColor = 'var(--google-blue-300)' }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.borderColor = 'var(--border-color)' }}>
                 {/* Category dot */}
@@ -196,7 +122,7 @@ export default function NewsPage() {
                   <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '14px' }}>{article.excerpt}</p>
                 </div>
                 <div style={{ color: 'var(--google-blue-600)', fontWeight: '600', fontSize: '18px', flexShrink: 0, marginTop: '4px' }}>→</div>
-              </a>
+              </Link>
             ))}
           </div>
 

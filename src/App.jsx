@@ -39,6 +39,7 @@ import AlmiraalPage from './pages/AlmiraalPage'
 // Resource Pages
 import HowWeBuildPage from './pages/HowWeBuildPage'
 import NewsPage from './pages/NewsPage'
+import NewsArticlePage from './pages/NewsArticlePage'
 import NotFoundPage from './pages/NotFoundPage'
 import ProductPage from './pages/ProductPage'
 import ProductNewsIndex from './pages/ProductNewsIndex'
@@ -102,6 +103,7 @@ function App() {
         <Route path="/all-products" element={<AllProductsPage />} />
         <Route path="/how-we-build" element={<HowWeBuildPage />} />
         <Route path="/news" element={<NewsPage />} />
+        <Route path="/news/:slug" element={<NewsArticlePage />} />
         {/* Generic product data-driven routes (StoreFlow, DebtSettler, FrameFly, Pomofly, CivilCalc, Nishan + news for all) */}
         <Route path="/products/:slug" element={<ProductPage />} />
         <Route path="/products/:slug/news" element={<ProductNewsIndex />} />
