@@ -5,7 +5,8 @@ import FaqSection from '../components/FaqSection'
 import SEOHead from '../components/SEOHead'
 import { 
   Smartphone, Compass, BookOpen, Clock, Activity, 
-  ShieldCheck, SmartphoneNfc, Layout, Database, Star, Check 
+  ShieldCheck, SmartphoneNfc, Layout, Database, Star, Check,
+  MapPin, Bell, Calendar, Heart, List, Moon, Repeat, Lock
 } from 'lucide-react'
 
 /* ─── Muhasba App ────────────────────────────────────────────────────────────
@@ -13,25 +14,35 @@ import {
    Hero: Website's standard light theme with Google-esque brand colors
 ───────────────────────────────────────────────────────────────────────────── */
 
-const PLAY_STORE_URL = '#'
+const APK_URL = '/products/apk/muhasba.apk'
 
 const features = [
-  { icon: <Clock size={24} />, title: 'Real-time Prayer Tracking', desc: 'Accurate prayer times based on your precise location, featuring beautiful Adhan notifications that alert you softly.' },
-  { icon: <Compass size={24} />, title: 'GPS Qibla Compass', desc: 'A highly accurate, hardware-accelerated compass that uses your device\'s location to find the exact Qibla direction, anywhere.' },
-  { icon: <BookOpen size={24} />, title: 'Comprehensive Duas', desc: 'A curated collection of daily authentic Duas, categorized for every occasion, featuring clear Arabic script and translations.' },
-  { icon: <SmartphoneNfc size={24} />, title: 'Digital Tasbeeh', desc: 'A sleek, distraction-free Tasbeeh counter featuring subtle haptic feedback so you can focus on your Dhikr without looking at the screen.' },
-  { icon: <Activity size={24} />, title: 'Jaiza (Daily Reflection)', desc: 'Track your daily spiritual consistency. A private, secure diary to log your prayers, reflections, and personal growth.' },
+  { icon: <Clock size={24} />, title: 'Live Prayer Times', desc: 'Automatically fetches accurate prayer times based on your GPS coordinates using the Aladhan API. Includes live countdowns to the next prayer and beautiful Adhan notifications.' },
+  { icon: <Compass size={24} />, title: 'GPS Qibla Finder', desc: 'A hardware-accelerated compass that uses your device\'s location to find the exact Qibla direction from anywhere in the world, instantly and accurately.' },
+  { icon: <BookOpen size={24} />, title: 'Salah & Hajj Guides', desc: 'Step-by-step illustrated instructions on how to perform daily prayers (Salah), plus a comprehensive Hajj & Umrah guide for the two sacred pilgrimages.' },
+  { icon: <Calendar size={24} />, title: 'Islamic Hijri Calendar', desc: 'A full Hijri calendar viewer showing accurate Islamic dates, upcoming Islamic events, and holidays synced to the current year.' },
+  { icon: <Heart size={24} />, title: 'Duas Collection', desc: 'A categorized library of authentic daily supplications (Duas) with clear Arabic script, transliteration, and full English translations.' },
+  { icon: <List size={24} />, title: '99 Names of Allah', desc: 'Browse all 99 Asma ul Husna with beautiful Arabic text, accurate transliteration, and deep meaning explanations for each name.' },
+  { icon: <SmartphoneNfc size={24} />, title: 'Digital Tasbeeh Counter', desc: 'A sleek, distraction-free Tasbeeh counter with haptic feedback for daily Dhikr and Zikr repetitions. No screen-looking needed.' },
+  { icon: <Activity size={24} />, title: 'Jaiza (Self-Evaluation)', desc: 'A private daily spiritual journaling and self-evaluation tool to track your prayers, good deeds, and personal growth. All data stays on your device.' },
+  { icon: <Repeat size={24} />, title: 'Smart To-Do List', desc: 'A daily goal and task management system that automatically rolls over any unfinished tasks to the next day, keeping you consistently on track.' },
+  { icon: <Moon size={24} />, title: 'Memories & Milestones', desc: 'A personal journal to log life events, Islamic milestones, and cherished memories — your own private digital diary.' },
+  { icon: <Bell size={24} />, title: 'Smart Notifications', desc: 'Local alerts for prayer times, Jummah (Friday) reminders, and daily Islamic notifications — all running offline, no internet needed.' },
+  { icon: <Lock size={24} />, title: 'Pro Access via Gumroad', desc: 'Unlock premium features using Gumroad license verification. Your one-time purchase grants lifetime access with no recurring fees.' },
 ]
 
 const MUHASBA_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Muhasba',
-  operatingSystem: 'Android, iOS',
+  name: 'Muhasba — Islamic Lifestyle App',
+  operatingSystem: 'Android',
   applicationCategory: 'LifestyleApplication',
-  description: 'Muhasba is a premium, ad-free Islamic lifestyle app featuring real-time prayer tracking, Qibla compass, Duas, and a digital Tasbeeh.',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description: 'Muhasba is a premium, ad-free Islamic lifestyle app featuring real-time prayer times, Qibla finder, Duas library, 99 Names of Allah, Tasbeeh counter, Hajj guide, Islamic calendar, and a daily reflection journal. Built with Flutter. 100% free, no ads, privacy-first.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
   url: 'https://minderfly.com/products/muhasba',
+  downloadUrl: 'https://minderfly.com/products/apk/muhasba.apk',
+  featureList: 'Live Prayer Times, GPS Qibla Compass, Duas Collection, 99 Names of Allah, Tasbeeh Counter, Salah Guide, Hajj & Umrah Guide, Islamic Calendar, Daily Jaiza Journal, Smart To-Do List, Memories Journal, Prayer Notifications, Pro License via Gumroad',
+  author: { '@type': 'Organization', name: 'Minderfly', url: 'https://minderfly.com' },
 }
 
 export default function MuhasbaPage() {
@@ -40,8 +51,8 @@ export default function MuhasbaPage() {
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
       <SEOHead
-        title="Muhasba App — Premium Islamic Lifestyle & Daily Reflection"
-        description="Muhasba is a beautifully designed, ad-free Islamic app for real-time prayer tracking, accurate Qibla compass, Duas, and daily reflection. 100% private."
+        title="Muhasba App — Free Islamic App with Prayer Times, Qibla, Duas & Tasbeeh"
+        description="Download Muhasba APK — a free, ad-free Islamic lifestyle app for Android. Features live prayer times, GPS Qibla finder, Duas, 99 Names of Allah, Tasbeeh counter, Hajj guide, Islamic calendar, and a daily reflection journal. Built by Minderfly."
         canonical="https://minderfly.com/products/muhasba"
         schema={MUHASBA_SCHEMA}
       />
@@ -72,8 +83,8 @@ export default function MuhasbaPage() {
             </div>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="gfe-button gfe-button--primary" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
-                Download on Google Play
+              <a href={APK_URL} download="muhasba.apk" className="gfe-button gfe-button--primary" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                ⬇ Download APK for Android
               </a>
               <Link to="/products/muhasba/privacy" className="gfe-button gfe-button--outline" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
                 Read Privacy Policy
@@ -246,8 +257,8 @@ export default function MuhasbaPage() {
             Experience the most beautiful, privacy-first Islamic app available. Free forever.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="gfe-button gfe-button--primary" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
-              Download for Android
+            <a href={APK_URL} download="muhasba.apk" className="gfe-button gfe-button--primary" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              ⬇ Download APK for Android
             </a>
             <Link to="/products/muhasba/privacy" className="gfe-button gfe-button--outline" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
               Privacy Policy

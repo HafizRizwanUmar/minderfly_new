@@ -92,6 +92,13 @@
 
   <!-- ── Desktop & Web Products ───────────────────────────────── -->
   <url>
+    <loc>https://minderfly.com/products/muhasba</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://minderfly.com/products/cinemafly</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>

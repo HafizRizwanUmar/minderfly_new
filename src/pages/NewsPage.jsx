@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Mailbox } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { NEWS } from '../data/news'
 
@@ -174,4 +175,3 @@ export default function NewsPage() {
   )
 }
 
-import { Film, Zap, Moon, FileText, Music, ListVideo, Monitor, Download, PenTool, Package, Award, BarChart, Cloud, Image, Files, Search, Save, Eye, Briefcase, Smartphone, Ban, Puzzle, Box, Video, CircleDot, Bot, Globe, Settings, Calendar, Check, Mailbox } from 'lucide-react'
