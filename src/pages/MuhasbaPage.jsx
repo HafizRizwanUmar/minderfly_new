@@ -14,7 +14,7 @@ import {
    Hero: Website's standard light theme with Google-esque brand colors
 ───────────────────────────────────────────────────────────────────────────── */
 
-const APK_URL = '/products/apk/muhasba.apk'
+const APK_URL = 'https://hafizrizwanumar.itch.io/muhasba'
 
 const features = [
   { icon: <Clock size={24} />, title: 'Live Prayer Times', desc: 'Automatically fetches accurate prayer times based on your GPS coordinates using the Aladhan API. Includes live countdowns to the next prayer and beautiful Adhan notifications.' },
@@ -83,8 +83,8 @@ export default function MuhasbaPage() {
             </div>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href={APK_URL} download="muhasba.apk" className="gfe-button gfe-button--primary" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                ⬇ Download APK for Android
+              <a href={APK_URL} target="_blank" rel="noopener noreferrer" className="gfe-button gfe-button--primary" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                ⬇ Download on itch.io
               </a>
               <Link to="/products/muhasba/privacy" className="gfe-button gfe-button--outline" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
                 Read Privacy Policy
@@ -257,8 +257,8 @@ export default function MuhasbaPage() {
             Experience the most beautiful, privacy-first Islamic app available. Free forever.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={APK_URL} download="muhasba.apk" className="gfe-button gfe-button--primary" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-              ⬇ Download APK for Android
+            <a href={APK_URL} target="_blank" rel="noopener noreferrer" className="gfe-button gfe-button--primary" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              ⬇ Download on itch.io
             </a>
             <Link to="/products/muhasba/privacy" className="gfe-button gfe-button--outline" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
               Privacy Policy
