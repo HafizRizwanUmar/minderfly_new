@@ -1,3 +1,5 @@
+import { cinemaflyNewsArticles } from '../cinemaflyNews';
+
 const cinemafly = {
   slug: 'cinemafly',
   name: 'Cinemafly',
@@ -219,5 +221,7 @@ Unlike many modern media players that track your viewing habits, force cloud sig
     }
   ],
 };
+
+cinemafly.news = [...cinemafly.news, ...cinemaflyNewsArticles];
 
 export default cinemafly;
