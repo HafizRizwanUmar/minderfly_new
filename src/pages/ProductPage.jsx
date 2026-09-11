@@ -119,13 +119,31 @@ const ProductPage = () => {
               <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>v{product.version}</span>
             </div>
 
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
-              <a href={product.appStoreLink} className="gfe-button gfe-button--primary" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
-                <Download size={18} /> Download Free
-              </a>
-              <a href={product.playStoreLink} className="gfe-button gfe-button--outline" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
-                <ExternalLink size={18} /> Visit Store
-              </a>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', alignItems: 'center' }}>
+              {product.msStoreId ? (
+                <ms-store-badge 
+                  productid={product.msStoreId} 
+                  productname={product.name} 
+                  window-mode="direct" 
+                  theme="auto" 
+                  size="large" 
+                  language="en-us" 
+                  animation="on"
+                ></ms-store-badge>
+              ) : (
+                <>
+                  {product.appStoreLink && (
+                    <a href={product.appStoreLink} className="gfe-button gfe-button--primary" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
+                      <Download size={18} /> Download Free
+                    </a>
+                  )}
+                  {product.playStoreLink && (
+                    <a href={product.playStoreLink} className="gfe-button gfe-button--outline" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
+                      <ExternalLink size={18} /> Visit Store
+                    </a>
+                  )}
+                </>
+              )}
             </div>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -310,13 +328,31 @@ const ProductPage = () => {
             </div>
             <h2 className="gfe-headline-2" style={{ marginBottom: '20px' }}>Ready to try {product.name}?</h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '40px', maxWidth: '520px', margin: '0 auto 40px', lineHeight: 1.7 }}>{product.shortDesc}</p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center' }}>
-              <a href={product.appStoreLink} className="gfe-button gfe-button--primary" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
-                <Download size={18} /> Download Free
-              </a>
-              <a href={product.playStoreLink} className="gfe-button gfe-button--outline" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
-                <ExternalLink size={18} /> Visit Store
-              </a>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center', alignItems: 'center' }}>
+              {product.msStoreId ? (
+                <ms-store-badge 
+                  productid={product.msStoreId} 
+                  productname={product.name} 
+                  window-mode="direct" 
+                  theme="auto" 
+                  size="large" 
+                  language="en-us" 
+                  animation="on"
+                ></ms-store-badge>
+              ) : (
+                <>
+                  {product.appStoreLink && (
+                    <a href={product.appStoreLink} className="gfe-button gfe-button--primary" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
+                      <Download size={18} /> Download Free
+                    </a>
+                  )}
+                  {product.playStoreLink && (
+                    <a href={product.playStoreLink} className="gfe-button gfe-button--outline" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
+                      <ExternalLink size={18} /> Visit Store
+                    </a>
+                  )}
+                </>
+              )}
             </div>
           </motion.div>
         </div>

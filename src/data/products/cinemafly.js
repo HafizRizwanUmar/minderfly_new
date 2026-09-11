@@ -13,14 +13,13 @@ const cinemafly = {
     '/products/screenshot/cinemafly/cinemafly2.png',
     '/products/screenshot/cinemafly/cinemafly3.png'
   ],
-  appStoreLink: '#',
-  playStoreLink: '#',
+  msStoreId: '9p5xw3mzlqb0',
   category: 'Video & Entertainment',
   rating: 4.9,
   reviews: 28600,
   version: '5.1.0',
   size: '38 MB',
-  platforms: ['macOS', 'iOS', 'tvOS'],
+  platforms: ['Windows', 'macOS', 'iOS'],
 
   sections: [
     {
