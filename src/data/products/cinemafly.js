@@ -7,6 +7,11 @@ const cinemafly = {
   accentColor: '#00d4ff',
   logo: '/products/logo/cinemafly (2).png',
   screenshot: '/products/screenshot/cinemafly.png',
+  screenshots: [
+    '/products/screenshot/cinemafly/cinemafly1.png',
+    '/products/screenshot/cinemafly/cinemafly2.png',
+    '/products/screenshot/cinemafly/cinemafly3.png'
+  ],
   appStoreLink: '#',
   playStoreLink: '#',
   category: 'Video & Entertainment',
@@ -24,48 +29,33 @@ const cinemafly = {
 
 The modern video landscape is fragmented and complex. Video files come in dozens of container formats (MKV, MP4, AVI, MOV, M4V, TS, MXF, WebM) and are encoded with an ever-expanding list of codecs (H.264, H.265/HEVC, AV1, VP9, ProRes, DNxHD). Most standard media players struggle with even a fraction of this variety — they either fail to play certain formats, require the installation of additional codecs, or compromise quality by software-decoding video that should be hardware-decoded. The result is stuttering playback, overheating devices, drained batteries, and generally a frustrating viewing experience.
 
-Cinemafly was created specifically to solve this problem. At its core is a sophisticated media playback engine built on a combination of Apple's hardware Video Toolbox framework (for maximum performance on Apple Silicon and Intel Macs), an enhanced version of the FFmpeg library (for universal format support), and Cinemafly's own proprietary rendering pipeline (for superior color accuracy and HDR tone mapping). This three-layer architecture means Cinemafly can play virtually any video file you throw at it, while always choosing the most efficient decoding path for maximum performance and battery life.
+Cinemafly was created specifically to solve this problem. At its core is a sophisticated media playback engine built on a combination of Apple's hardware Video Toolbox framework, an enhanced version of the FFmpeg library, and Cinemafly's proprietary rendering pipeline.
 
-On Apple Silicon Macs (M1, M2, M3, M4, and beyond), Cinemafly takes full advantage of the dedicated media engine built into Apple's chips. Playing a 4K HEVC video at maximum quality consumes only a fraction of the CPU resources that software decoding would require, meaning you can watch a two-hour 4K movie on battery power without significantly impacting your laptop's runtime. On Intel Macs, Cinemafly similarly leverages Intel's Quick Sync Video hardware acceleration for supported codecs.
-
-For video creators and content professionals, Cinemafly supports professional codec formats including Apple ProRes (422, 422 HQ, 422 LT, 422 Proxy, 4444, 4444 XQ), Avid DNxHD and DNxHR, RED RAW (with the free REDline SDK plugin), and ARRI LogC formats. This makes Cinemafly not just a consumer media player but a genuine professional preview tool that can be used on set or in post-production for quick, high-quality playback without launching a full editing application.`,
+On Apple Silicon Macs, Cinemafly takes full advantage of the dedicated media engine built into Apple's chips. Playing a 4K HEVC video at maximum quality consumes only a fraction of the CPU resources that software decoding would require, meaning you can watch a two-hour 4K movie on battery power without significantly impacting your laptop's runtime.`,
     },
     {
       id: 'features',
-      title: 'Every Feature a Video Enthusiast Could Dream Of',
+      title: 'Key Features & Capabilities',
       body: `Cinemafly is packed with features that address every aspect of the video playback experience. Here is an exhaustive look at what makes Cinemafly the video player of choice for millions of users worldwide.
 
-**Universal Format Support — Play Anything**
-Cinemafly's format compatibility is unmatched. Container support includes MKV, MP4, M4V, MOV, AVI, WMV, FLV, WebM, TS, M2TS, MXF, OGV, 3GP, and dozens of others. Video codec support includes H.264 (AVC), H.265 (HEVC), AV1, VP8, VP9, MPEG-2, MPEG-4, WMV, DivX, Xvid, Theora, ProRes, DNxHD, DNxHR, and more. For the rare format that Cinemafly doesn't natively support, the built-in codec package manager lets you install additional codecs with one click. If a file exists on your device, Cinemafly will play it.
-
-**4K Ultra HD and 8K Playback**
-Cinemafly was designed with 4K as the baseline, not a premium feature. It handles 4K video at 24, 25, 30, 60, and 120 frames per second, as well as 8K video on compatible hardware. For professional users working with high-bitrate 4K footage (100 Mbps or higher), Cinemafly manages buffer management and seek performance with sophisticated algorithms that eliminate the stuttering that many players exhibit with these demanding files.
-
-**HDR10, HDR10+, Dolby Vision, and HLG Support**
-High Dynamic Range video delivers a dramatically expanded range of colors and brightness compared to standard dynamic range (SDR) video, and Cinemafly supports every major HDR format. On compatible displays (Apple XDR displays, Pro Display XDR, compatible external monitors), HDR content is displayed with full peak brightness and the complete P3 or BT.2020 color gamut. For SDR displays, Cinemafly's proprietary HDR-to-SDR tone mapping algorithm preserves as much of the HDR content's visual character as possible while adapting it to the display's capabilities — far superior to the harsh clipping that most other players apply.
-
-**Advanced Subtitle System**
-Subtitle support in Cinemafly goes far beyond simply displaying text. External subtitle formats supported include SRT, ASS, SSA, VTT, SUB, IDX, SBV, and more. Embedded subtitle tracks in MKV, MP4, and other containers are automatically detected and selectable. Cinemafly's subtitle rendering engine handles complex formatting including italics, bold, color coding, position overrides, and karaoke-style highlighting. For ASS/SSA subtitles used in anime and some foreign films, Cinemafly renders the full spec including animated elements, gradient fills, and precise positioning.
-
-The subtitle preferences panel gives you complete control over font, size, color, outline weight, shadow depth, and position, with a live preview. If you are watching a film in a foreign language and the subtitle track has timing issues, the subtitle delay slider allows you to adjust timing in 100 millisecond increments without pausing playback.
-
-**Multiple Audio Track and Surround Sound Support**
-Modern video files often contain multiple audio tracks — different languages, directors' commentaries, audio descriptions for the visually impaired, and different audio formats. Cinemafly lets you switch between all available audio tracks instantly during playback. Audio format support includes Dolby Digital (AC3), Dolby Digital Plus (E-AC3), Dolby TrueHD, DTS, DTS-HD Master Audio, DTS:X, Dolby Atmos passthrough, and uncompressed PCM (up to 32-bit, 192 kHz). On Macs connected to compatible audio receivers or soundbars via HDMI or optical audio, Cinemafly supports full bitstream passthrough for lossless audio formats, delivering the complete Dolby Atmos or DTS:X experience.
-
-**Picture-in-Picture and Split View**
-Cinemafly's Picture-in-Picture mode allows you to continue watching a video in a small floating overlay while working in other applications. The PiP window can be resized from a compact thumbnail to a significant portion of your screen, and Cinemafly remembers your preferred size and screen position. On macOS Ventura and later, PiP windows stay on top of even full-screen applications, letting you reference a tutorial video while working in your creative applications. Split View support allows Cinemafly to operate alongside another application in Apple's native Split View mode.
+- **Play HEVC (H.265) Natively:** No need to download external extensions or codecs. HEVC works flawlessly right out of the box.
+- **4K and Ultra HD (UHD) Playback:** Hand-optimized rendering pipeline for silky smooth 4K and 8K playback at up to 120fps.
+- **Universal Format Compatibility:** Plays MKV, MP4, AVI, MOV, WMV, FLV, WEBM, M2TS, MXF, and virtually any other container.
+- **Hardware Acceleration:** Hardware-accelerated playback for smooth performance, minimal CPU usage, and longer battery life on Apple Silicon.
+- **Modern Dark-Themed UI:** A sleek, immersive dark-themed user interface that puts your content front and center.
+- **Cinema Mode:** Refined distraction-free viewing with auto-hide controls for the ultimate cinematic experience.
+- **Privacy-Focused:** A completely lightweight, offline player. No data collection, no telemetry.
+- **Advanced Audio Passthrough:** Automatic passthrough for Dolby Atmos and DTS-HD directly to your receiver.
+- **Advanced Subtitles:** Complete control over embedded and external subtitles (SRT, ASS, VTT) with styling and timing adjustments.
 
 **Playlist Management and Continuous Playback**
-Cinemafly includes a full-featured playlist manager for organizing and queueing multiple files. Drag and drop any combination of video files or folders into the playlist, set the order, and Cinemafly will play them continuously. The playlist supports repeat (single, all), shuffle, and bookmarking individual files to resume later. For TV show marathons, the auto-advance feature moves to the next episode automatically after a brief pause, and the system even intelligently detects opening credit sequences and optional episode recaps to offer to skip them.
+Cinemafly includes a full-featured playlist manager for organizing and queueing multiple files. Drag and drop any combination of video files or folders into the playlist, set the order, and Cinemafly will play them continuously.
 
 **Advanced Playback Controls**
-Beyond the standard play, pause, and seek controls, Cinemafly offers a complete set of advanced playback features. Frame-by-frame stepping (forward and backward) is essential for video analysis and editing review. Variable playback speed supports 0.25x, 0.5x, 0.75x, 1x, 1.25x, 1.5x, 2x, and 4x speeds. A/B loop allows you to mark a start and end point and loop a specific section of video indefinitely — perfect for language learning, sports analysis, and music video study. Chapter markers embedded in MKV and MP4 files are displayed in a chapter browser panel for easy navigation.
+Beyond the standard play, pause, and seek controls, Cinemafly offers a complete set of advanced playback features. Frame-by-frame stepping (forward and backward) is essential for video analysis and editing review. Variable playback speed supports 0.25x to 4x speeds.
 
 **Video Filters and Adjustments**
-Cinemafly includes a comprehensive set of real-time video adjustments that can improve the viewing experience for suboptimal content or match your display's characteristics. Brightness, contrast, saturation, hue, and sharpness can all be adjusted on the fly. The deinterlacing filter converts interlaced video (common in broadcast recordings and older DVD content) to progressive display, eliminating the comb artifacts that make interlaced content look jagged. A noise reduction filter can smooth out grain in old or poorly encoded video. The deband filter removes banding artifacts common in video with insufficient bit depth.
-
-**Library and Media Management**
-Cinemafly's library view aggregates all your video files from specified folder locations and displays them in a visually rich grid with automatically fetched poster art, titles, and metadata from online databases. The library organizes your content into categories (Movies, TV Shows, Home Videos), supports custom collections, and tracks your watch history and progress. The smart resume feature picks up exactly where you left off — even if you switched devices — so you never lose your place in a long film or documentary.`,
+Cinemafly includes a comprehensive set of real-time video adjustments that can improve the viewing experience for suboptimal content or match your display's characteristics. Brightness, contrast, saturation, hue, and sharpness can all be adjusted on the fly.`,
     },
     {
       id: 'performance',
@@ -196,6 +186,37 @@ Software AV1 decoding via dav1d is available on all other supported hardware.
 
 Cinemafly 5.1 is available today as a free update for all existing Cinemafly users. New users can download Cinemafly from the Mac App Store and iOS App Store. The AV1 hardware acceleration features are available on all Cinemafly plans including the free tier.`,
     },
+    {
+      slug: 'cinemafly-ultimate-offline-player',
+      title: 'Cinemafly: The Ultimate Offline Player for 4K HEVC and Immersive Viewing',
+      date: 'September 11, 2026',
+      summary: 'Discover how Cinemafly redefines offline video playback with native HEVC support, hardware-accelerated 4K, and a distraction-free Cinema Mode.',
+      readTime: '6 min read',
+      category: 'Product Spotlight',
+      body: `As streaming services continue to fragment and internet connections remain unreliable while traveling, having a robust, capable offline media player is more important than ever. Cinemafly was built for the purists: those who want to watch their local video files in the highest possible fidelity without jumping through hoops.
+
+Here is a deep dive into what makes Cinemafly the premier choice for offline video playback.
+
+## Native HEVC (H.265) Playback
+Most operating systems and default video players struggle with HEVC (High Efficiency Video Coding) files, often prompting users to download sketchy external codec packs or purchase paid extensions. Cinemafly plays HEVC natively right out of the box. Whether it's drone footage, a movie rip, or iPhone video, you can play it instantly without downloading external extensions.
+
+## Hardware-Accelerated 4K & UHD Performance
+Software decoding 4K video will drain your battery and turn your laptop into a space heater. Cinemafly utilizes deep hardware acceleration on both Apple Silicon and modern Intel processors. This ensures silky smooth playback of 4K and Ultra HD (UHD) files, eliminating stutter and dropped frames while keeping your device cool and your battery lasting through the director's cut.
+
+## Universal Format Compatibility
+Stop worrying about whether your player supports the file you just downloaded. Cinemafly is a true "play anything" engine. It is fully compatible with MKV, MP4, AVI, MOV, WMV, FLV, WEBM, M2TS, and many more.
+
+## Cinema Mode & Immersive Dark UI
+We believe the player interface should disappear when the movie starts. Cinemafly features a modern, immersive dark-themed user interface designed specifically for media consumption. 
+
+When you enter **Cinema Mode**, it takes distraction-free viewing to the next level. The controls auto-hide with refined, subtle animations, the window chrome disappears, and your screen becomes a pure canvas for the video. 
+
+## Audiophile-Grade Sound
+Video is only half the experience. For users with dedicated home theater setups or high-end soundbars, Cinemafly supports automatic audio passthrough for premium formats like Dolby Atmos and DTS-HD. Instead of downmixing the audio to stereo, Cinemafly passes the raw bitstream directly to your receiver, delivering the immersive, room-shaking sound the sound designer intended.
+
+## Lightweight and Privacy-Focused
+Unlike many modern media players that track your viewing habits, force cloud sign-ins, or serve ads, Cinemafly is a strictly offline, privacy-first application. It is incredibly lightweight, launching in under a second, and it never phones home with your data. Your media collection is your business.`,
+    }
   ],
 };
 

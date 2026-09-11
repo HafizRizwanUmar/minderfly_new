@@ -229,6 +229,22 @@ const ProductPage = () => {
         </AnimatePresence>
       </section>
 
+      {/* ── GALLERY ── */}
+      {product.screenshots && product.screenshots.length > 0 && (
+        <section style={{ padding: '80px 24px', background: 'var(--grey-50)', borderBottom: '1px solid var(--border-color)' }}>
+          <div className="gfe-container">
+            <h2 className="gfe-headline-2" style={{ textAlign: 'center', marginBottom: '48px' }}>Interface & Screenshots</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+              {product.screenshots.map((imgUrl, idx) => (
+                <div key={idx} style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-1)' }}>
+                  <img src={imgUrl} alt={`${product.name} screenshot ${idx + 1}`} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── FAQ ── */}
       {product.faqs?.length > 0 && (
         <section style={{ background: 'var(--grey-50)', padding: '5rem 2rem', borderTop: '1px solid var(--border-color)' }}>
