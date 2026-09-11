@@ -6,7 +6,8 @@ const cinemafly = {
   heroColor: '#2d1b69',
   accentColor: '#00d4ff',
   logo: '/products/logo/cinemafly (2).png',
-  screenshot: '/products/screenshot/cinemafly.png',
+  screenshot: '/products/screenshot/cinemafly/cinemafly1.png',
+  screenshot2: '/products/screenshot/cinemafly/cinemafly2.png',
   screenshots: [
     '/products/screenshot/cinemafly/cinemafly1.png',
     '/products/screenshot/cinemafly/cinemafly2.png',
