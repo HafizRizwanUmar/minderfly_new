@@ -86,72 +86,33 @@ export default function CinemaflyPage() {
             </div>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href={STORE_URL} target="_blank" rel="noopener noreferrer" className="gfe-button gfe-button--primary" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
-                <Download size={18} /> Download on Microsoft Store
-              </a>
+              <ms-store-badge 
+                productid="9p5xw3mzlqb0" 
+                productname="Cinemafly - HEVC & 4K Video Player" 
+                window-mode="direct" 
+                theme="auto" 
+                size="large" 
+                language="en-us" 
+                animation="on"
+              ></ms-store-badge>
               <Link to="/contact" className="gfe-button gfe-button--outline" style={{ padding: '14px 28px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
                 Build something like this
               </Link>
             </div>
           </div>
 
-          {/* Right — CSS Mockup of the Player */}
-          <div style={{ position: 'relative' }}>
-            {/* The Player Window Mockup */}
-            <div style={{ 
-              background: '#0a0a0c', 
-              borderRadius: '12px', 
-              overflow: 'hidden', 
-              boxShadow: '0 24px 80px rgba(0,0,0,0.15)',
-              border: '1px solid var(--border-color)',
-              aspectRatio: '16/9',
-              display: 'flex',
-              flexDirection: 'column',
-              position: 'relative'
-            }}>
-              {/* Window Controls */}
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '40px', background: 'linear-gradient(to bottom, rgba(0,0,0,0.7), transparent)', zIndex: 10, display: 'flex', justifyContent: 'flex-end', padding: '12px' }}>
-                <div style={{ display: 'flex', gap: '8px' }}>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)' }} />
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)' }} />
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)' }} />
-                </div>
-              </div>
-
-              {/* Video Area */}
-              <div style={{ flex: 1, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                 {/* Fake video poster/gradient */}
-                 <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, #1a1a2e 0%, #0a0a0c 100%)' }}></div>
-                 {/* Play Button Center */}
-                 <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
-                    <div style={{ width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderLeft: '16px solid var(--white)', marginLeft: '6px' }}></div>
-                 </div>
-              </div>
-
-              {/* Player Controls Bar */}
-              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'rgba(10,10,12,0.85)', backdropFilter: 'blur(16px)', padding: '16px 20px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {/* Progress bar */}
-                <div style={{ height: '4px', background: 'rgba(255,255,255,0.1)', borderRadius: '2px', position: 'relative' }}>
-                  <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '45%', background: 'var(--google-blue-600)', borderRadius: '2px' }} />
-                  <div style={{ position: 'absolute', left: '45%', top: '50%', transform: 'translateY(-50%)', width: '12px', height: '12px', background: 'var(--white)', borderRadius: '50%', boxShadow: '0 0 10px rgba(0,0,0,0.5)' }} />
-                </div>
-                {/* Icons */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                     <div style={{ width: '16px', height: '16px', background: 'rgba(255,255,255,0.8)', borderRadius: '2px' }}></div> {/* Fake play */}
-                     <div style={{ width: '16px', height: '16px', background: 'rgba(255,255,255,0.4)', borderRadius: '2px' }}></div> {/* Fake skip */}
-                     <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '11px', fontFamily: 'monospace' }}>24:12 / 1:52:08</span>
-                  </div>
-                  <div style={{ display: 'flex', gap: '16px' }}>
-                     <div style={{ width: '16px', height: '16px', background: 'rgba(255,255,255,0.4)', borderRadius: '2px' }}></div>
-                     <div style={{ width: '16px', height: '16px', background: 'rgba(255,255,255,0.4)', borderRadius: '2px' }}></div>
-                  </div>
-                </div>
+          {/* Right — Screenshots */}
+          <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
+              <div style={{ position: 'absolute', inset: '-16px', borderRadius: '24px', filter: 'blur(40px)', opacity: 0.15, background: 'var(--google-blue-600)' }} />
+              <div style={{ position: 'relative', display: 'flex', width: '110%', marginLeft: '5%' }}>
+                <img src="/products/screenshot/cinemafly/cinemafly1.png" alt="Cinemafly Window" style={{ position: 'relative', zIndex: 1, borderRadius: '16px', boxShadow: 'var(--shadow-2)', width: '60%', objectFit: 'cover', border: '1px solid var(--border-color)', transform: 'translateY(-10px)' }} />
+                <img src="/products/screenshot/cinemafly/cinemafly2.png" alt="Cinemafly Playback" style={{ position: 'relative', zIndex: 2, borderRadius: '16px', boxShadow: '0 24px 60px rgba(0,0,0,0.15)', width: '60%', objectFit: 'cover', border: '1px solid var(--border-color)', marginLeft: '-20%', transform: 'translateY(30px)' }} />
               </div>
             </div>
             
             {/* Floating feature badge */}
-            <div style={{ position: 'absolute', top: '-20px', right: '-20px', background: 'var(--white)', borderRadius: '16px', padding: '16px 24px', boxShadow: '0 12px 32px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', gap: '12px', border: '1px solid var(--border-color)' }}>
+            <div style={{ position: 'absolute', top: '-20px', right: '-20px', background: 'var(--white)', borderRadius: '16px', padding: '16px 24px', boxShadow: '0 12px 32px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', gap: '12px', border: '1px solid var(--border-color)', zIndex: 10, whiteSpace: 'nowrap' }}>
               <div style={{ fontSize: '24px' }}><Zap size={24} color="#EF4444" /></div>
               <div>
                 <div style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: '600' }}>Hardware Accelerated</div>
@@ -200,6 +161,24 @@ export default function CinemaflyPage() {
                 <div style={{ fontSize: '2.2rem', marginBottom: '16px' }}>{f.icon}</div>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '10px' }}>{f.title}</h3>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.9rem' }}>{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── GALLERY ── */}
+      <section style={{ padding: '80px 24px', background: 'var(--white)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+        <div className="gfe-container">
+          <h2 className="gfe-headline-2" style={{ textAlign: 'center', marginBottom: '48px' }}>Interface & Screenshots</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+            {[
+              '/products/screenshot/cinemafly/cinemafly1.png',
+              '/products/screenshot/cinemafly/cinemafly2.png',
+              '/products/screenshot/cinemafly/cinemafly3.png'
+            ].map((imgUrl, idx) => (
+              <div key={idx} style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-1)' }}>
+                <img src={imgUrl} alt={`Cinemafly screenshot ${idx + 1}`} style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             ))}
           </div>
@@ -266,9 +245,15 @@ export default function CinemaflyPage() {
             Join the community replacing their default Windows player. 3-day full trial, then free — or Pro for just $4.99.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={STORE_URL} target="_blank" rel="noopener noreferrer" className="gfe-button gfe-button--primary" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
-              <Download size={18} /> Download Free on Windows
-            </a>
+            <ms-store-badge 
+              productid="9p5xw3mzlqb0" 
+              productname="Cinemafly - HEVC & 4K Video Player" 
+              window-mode="direct" 
+              theme="auto" 
+              size="large" 
+              language="en-us" 
+              animation="on"
+            ></ms-store-badge>
             <Link to="/contact" className="gfe-button gfe-button--outline" style={{ padding: '15px 32px', height: 'auto', fontSize: '15px', borderRadius: '8px' }}>
               Build something like this →
             </Link>
