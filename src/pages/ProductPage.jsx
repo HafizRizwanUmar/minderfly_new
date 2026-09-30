@@ -78,11 +78,7 @@ const ProductPage = () => {
 
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
-      <SEOHead
-        title={`${product.name} | Minderfly`}
-        description={product.shortDesc}
-        canonical={`https://minderfly.com/products/${product.slug}`}
-      />
+      <SEOHead title={`${product.name} | Minderfly`} description={product.shortDesc} canonical={`https://minderfly.com/products/${product.slug}`} schema={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": product.name, "description": product.shortDesc, "url": `https://minderfly.com/products/${product.slug}`, "applicationCategory": "BusinessApplication", "operatingSystem": product.platforms ? product.platforms.join(", ") : "Windows, macOS, Web", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }} />
 
       {/* ── HERO ── */}
       <section style={{ padding: '60px 24px', background: 'var(--white)', borderBottom: '1px solid var(--border-color)', overflow: 'hidden' }}>
@@ -362,3 +358,4 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
+
