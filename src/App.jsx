@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import SEOHead from './components/SEOHead'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -11,41 +12,41 @@ import FaqSection from './components/FaqSection'
 import CtaBanner from './components/CtaBanner'
 import Footer from './components/Footer'
 import ImpactSection from './components/ImpactSection'
-import ContactPage from './pages/ContactPage'
-import AllProductsPage from './pages/AllProductsPage'
+const ContactPage = React.lazy(() => import('./pages/ContactPage'))
+const AllProductsPage = React.lazy(() => import('./pages/AllProductsPage'))
 
 // Product Pages
-import CinemaflyPage from './pages/CinemaflyPage'
-import DocSignerPage from './pages/DocSignerPage'
-import SanadPdfEditorPage from './pages/SanadPdfEditorPage'
-import InklessLmsPage from './pages/InklessLmsPage'
-import FlutterEmulatorPage from './pages/FlutterEmulatorPage'
-import MinimalDeskThemePage from './pages/MinimalDeskThemePage'
-import PastelAuroraPage from './pages/PastelAuroraPage'
-import LunarLeapThemePage from './pages/LunarLeapThemePage'
-import MuhasbaPage from './pages/MuhasbaPage'
-import MuhasbaPrivacyPage from './pages/MuhasbaPrivacyPage'
+const CinemaflyPage = React.lazy(() => import('./pages/CinemaflyPage'))
+const DocSignerPage = React.lazy(() => import('./pages/DocSignerPage'))
+const SanadPdfEditorPage = React.lazy(() => import('./pages/SanadPdfEditorPage'))
+const InklessLmsPage = React.lazy(() => import('./pages/InklessLmsPage'))
+const FlutterEmulatorPage = React.lazy(() => import('./pages/FlutterEmulatorPage'))
+const MinimalDeskThemePage = React.lazy(() => import('./pages/MinimalDeskThemePage'))
+const PastelAuroraPage = React.lazy(() => import('./pages/PastelAuroraPage'))
+const LunarLeapThemePage = React.lazy(() => import('./pages/LunarLeapThemePage'))
+const MuhasbaPage = React.lazy(() => import('./pages/MuhasbaPage'))
+const MuhasbaPrivacyPage = React.lazy(() => import('./pages/MuhasbaPrivacyPage'))
 
 // Values Pages
-import OurCommitmentPage from './pages/OurCommitmentPage'
-import OurTeamPage from './pages/OurTeamPage'
-import PrivacyPage from './pages/PrivacyPage'
+const OurCommitmentPage = React.lazy(() => import('./pages/OurCommitmentPage'))
+const OurTeamPage = React.lazy(() => import('./pages/OurTeamPage'))
+const PrivacyPage = React.lazy(() => import('./pages/PrivacyPage'))
 
 // Solutions Pages
-import DrHammadPage from './pages/DrHammadPage'
-import QuranAcademyPage from './pages/QuranAcademyPage'
-import AlmiraalPage from './pages/AlmiraalPage'
+const DrHammadPage = React.lazy(() => import('./pages/DrHammadPage'))
+const QuranAcademyPage = React.lazy(() => import('./pages/QuranAcademyPage'))
+const AlmiraalPage = React.lazy(() => import('./pages/AlmiraalPage'))
 
 // Resource Pages
-import HowWeBuildPage from './pages/HowWeBuildPage'
-import NewsPage from './pages/NewsPage'
-import NewsArticlePage from './pages/NewsArticlePage'
-import NotFoundPage from './pages/NotFoundPage'
-import ProductPage from './pages/ProductPage'
-import ProductNewsIndex from './pages/ProductNewsIndex'
-import ProductNewsArticle from './pages/ProductNewsArticle'
-import ServiceLocationPage from './pages/ServiceLocationPage'
-import LocationsDirectoryPage from './pages/LocationsDirectoryPage'
+const HowWeBuildPage = React.lazy(() => import('./pages/HowWeBuildPage'))
+const NewsPage = React.lazy(() => import('./pages/NewsPage'))
+const NewsArticlePage = React.lazy(() => import('./pages/NewsArticlePage'))
+const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'))
+const ProductPage = React.lazy(() => import('./pages/ProductPage'))
+const ProductNewsIndex = React.lazy(() => import('./pages/ProductNewsIndex'))
+const ProductNewsArticle = React.lazy(() => import('./pages/ProductNewsArticle'))
+const ServiceLocationPage = React.lazy(() => import('./pages/ServiceLocationPage'))
+const LocationsDirectoryPage = React.lazy(() => import('./pages/LocationsDirectoryPage'))
 
 const HOME_SCHEMA = {
   '@context': 'https://schema.org',
@@ -83,7 +84,8 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
+      <Suspense fallback={<div style={{height:"100vh", display:"flex", alignItems:"center", justifyContent:"center"}}>Loading...</div>}>
+        <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products/cinemafly" element={<CinemaflyPage />} />
         <Route path="/products/docsigner" element={<DocSignerPage />} />
@@ -114,6 +116,7 @@ function App() {
         <Route path="/products/:slug/news/:articleSlug" element={<ProductNewsArticle />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+        </Suspense>
       <Footer />
       <WhatsAppButton />
     </>
