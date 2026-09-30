@@ -13,11 +13,13 @@ import SEOHead from '../components/SEOHead'
 const STORE_URL = 'https://apps.microsoft.com/detail/9p5xw3mzlqb0?hl=en-US&gl=BS'
 
 const features = [
-  { icon: <Film size={24} />, title: 'Universal Format Support', desc: 'Plays MKV, HEVC, AV1, WebM, FLV, and 50+ other formats out of the box. No external codec packs required.' },
-  { icon: <Zap size={24} />, title: 'Hardware Acceleration', desc: 'Silky smooth 4K and 8K playback that uses your GPU to save battery life on laptops and run efficiently.' },
+  { icon: <Film size={24} />, title: 'Universal Format Support', desc: 'Plays MKV, MP4, AVI, MOV, WMV, FLV, WebM, HEVC, AV1, and 50+ other formats out of the box. No external codec packs required.' },
+  { icon: <Video size={24} />, title: 'Native HEVC (H.265) + 4K/UHD', desc: 'Built-in H.265 decoding with full 4K and Ultra HD support — no paid Microsoft Store codec add-ons, no third-party codec packs, ever.' },
+  { icon: <Zap size={24} />, title: 'Hardware Acceleration', desc: 'Silky smooth 4K and 8K playback that uses your GPU to save battery life on laptops and run efficiently, even on modest hardware.' },
   { icon: <Moon size={24} />, title: 'Beautiful Cinematic UI', desc: 'A sleek, borderless, dark-themed interface that fades away when you\'re watching. Built for Windows 11 with glassmorphism effects.' },
+  { icon: <Eye size={24} />, title: 'Cinema Mode', desc: 'A refined, distraction-free viewing mode with auto-hide controls that fade out smoothly, recreating the focus of a real movie theater.' },
   { icon: <FileText size={24} />, title: 'Advanced Subtitles', desc: 'Auto-detects local subtitles, lets you search online directly from the player, and offers full customization of font, size, and sync delays.' },
-  { icon: <Music size={24} />, title: 'Spatial Audio & EQ', desc: 'Support for surround sound formats (Dolby, DTS), volume boosting for quiet movies, and a 10-band equalizer.' },
+  { icon: <Music size={24} />, title: 'Dolby Atmos & DTS-HD Passthrough', desc: 'Automatic bitstream passthrough to your AV receiver or soundbar, plus a 10-band equalizer and volume boosting for quiet movies.' },
   { icon: <ListVideo size={24} />, title: 'Chapters & Playlists', desc: 'Seamlessly navigate MKV chapters, create continuous playlists, and automatically resume where you left off.' },
 ]
 
@@ -35,6 +37,12 @@ const faqs = [
   { q: 'How does it compare to VLC or Windows Media Player?', a: "VLC is powerful but built for technicians. Windows Media Player is outdated. Cinemafly is built specifically for modern Windows 11 users who want world-class format support wrapped in a beautiful, polished interface. You get the same format breadth as VLC with none of the visual clutter, plus features like watch history, subtitle sync, and playlist management that feel native to Windows." },
   { q: 'Is the $4.99 price really one-time?', a: 'Yes — one payment, lifetime access. No monthly subscription. No annual renewal. When you buy Pro you own it. All future updates within the Pro version are included at no extra cost. We believe great software should be affordable and permanent.' },
   { q: 'What happens after the 3-day trial?', a: "After your trial ends, you're moved to the free tier automatically — no charge, no action required. The free tier lets you continue using Cinemafly for everyday playback with a few limitations. Upgrade to Pro whenever you're ready, directly from the app or via the Microsoft Store." },
+  { q: 'Does Cinemafly play HEVC (H.265) videos from my iPhone?', a: "Yes. HEVC decoding is built directly into Cinemafly, so .mov and .mp4 files recorded on iPhone, Android, or any modern camera or drone open and play immediately — no Microsoft Store HEVC extension purchase and no third-party codec pack needed." },
+  { q: 'Can Cinemafly play 4K and Ultra HD (UHD) video smoothly?', a: "Yes. Cinemafly is built to handle true 4K/UHD (3840×2160) playback with accurate HDR color and responsive seeking, using hardware acceleration so even laptops with integrated graphics can play 4K HEVC content without stutter or dropped frames." },
+  { q: 'Which file formats does Cinemafly support?', a: "Cinemafly supports MKV, MP4, AVI, MOV, WMV, FLV, WEBM, and 50+ other container and codec combinations — including HEVC, AV1, and VP9 — so a single install covers your entire media library, old and new." },
+  { q: 'Does Cinemafly support Dolby Atmos and DTS-HD passthrough?', a: "Yes. When a compatible AV receiver or Atmos-capable soundbar is connected, Cinemafly automatically passes through the original Dolby Atmos or DTS-HD Master Audio bitstream instead of downmixing it, so your home theater system decodes full, uncompromised surround sound." },
+  { q: 'Is Cinemafly good for low-end or budget laptops?', a: "Yes. Hardware-accelerated decoding offloads the heavy lifting to your GPU's video engine instead of the CPU, so Cinemafly runs smoothly on budget and mid-range hardware, with lower battery drain and less fan noise than software-only players." },
+  { q: 'Does Cinemafly collect my viewing data or upload my videos?', a: "No. Cinemafly is an offline-first, privacy-focused desktop app. Your video files stay on your device, there's no account requirement, and there's no background telemetry tracking what or how you watch." },
 ]
 
 const CINEMAFLY_SCHEMA = {
@@ -43,9 +51,19 @@ const CINEMAFLY_SCHEMA = {
   name: 'Cinemafly',
   operatingSystem: 'Windows 11, Windows 10',
   applicationCategory: 'MultimediaApplication',
-  description: 'Cinemafly is a beautiful video player for Windows 11 that plays MKV, HEVC, AV1, and 50+ formats with hardware acceleration. A powerful VLC alternative with a modern UI.',
+  description: 'Cinemafly is a beautiful video player for Windows 11 that plays MKV, HEVC, AV1, and 50+ formats with hardware acceleration, native 4K/UHD playback, and Dolby Atmos & DTS-HD passthrough. A powerful VLC alternative with a modern UI.',
   offers: { '@type': 'Offer', price: '4.99', priceCurrency: 'USD' },
   url: 'https://minderfly.com/products/cinemafly',
+  featureList: [
+    'Native HEVC (H.265) decoding',
+    '4K and Ultra HD (UHD) video playback',
+    'Support for MKV, MP4, AVI, MOV, WMV, FLV, WEBM and 50+ formats',
+    'Modern dark-themed user interface',
+    'Hardware accelerated playback (Intel Quick Sync, NVIDIA NVDEC, AMD)',
+    'Cinema Mode — distraction-free auto-hide controls',
+    'Lightweight, offline, and privacy-focused',
+    'Automatic Dolby Atmos and DTS-HD Master Audio passthrough',
+  ],
 }
 
 export default function CinemaflyPage() {
@@ -54,8 +72,8 @@ export default function CinemaflyPage() {
   return (
     <div style={{ background: 'var(--white)', color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
       <SEOHead
-        title="Cinemafly — Best Video Player for Windows 11 | MKV, HEVC, AV1 | Free Trial"
-        description="Cinemafly is a beautiful Windows media player that plays MKV, HEVC, AV1, MP4, WebM without installing extra codecs. Subtitle support, playlist, watch history. One-time $4.99 lifetime — 3-day free trial."
+        title="Cinemafly — Best 4K HEVC Video Player for Windows 11 | MKV, AV1, Dolby Atmos"
+        description="Cinemafly is a beautiful Windows media player with native HEVC (H.265) decoding, 4K/UHD playback, and support for MKV, MP4, AVI, MOV, WMV, FLV, WEBM, AV1 and more — no codec packs needed. Hardware-accelerated, dark-themed Cinema Mode, Dolby Atmos & DTS-HD passthrough. One-time $4.99 lifetime — 3-day free trial."
         canonical="https://minderfly.com/products/cinemafly"
         schema={CINEMAFLY_SCHEMA}
       />
@@ -163,6 +181,77 @@ export default function CinemaflyPage() {
                 <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.9rem' }}>{f.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ IN-DEPTH GUIDE — long-form SEO content ═══════════════════════════ */}
+      <section style={{ padding: '100px 24px', background: 'var(--grey-50)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+        <div className="gfe-container" style={{ maxWidth: '860px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+            <p style={{ fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--google-blue-600)', marginBottom: '12px' }}>The complete guide</p>
+            <h2 className="gfe-headline-2">Everything Cinemafly does — explained</h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginTop: '16px', lineHeight: '1.7' }}>
+              A closer look at why Cinemafly is one of the best free HEVC and 4K video players for Windows 11 and Windows 10.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+            <div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>Native HEVC (H.265) playback — no paid codec required</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '0.98rem' }}>
+                Most iPhone videos, 4K Blu-ray rips, and drone footage are encoded in HEVC (H.265) — a format Windows 11's default player still can't open without a separate paid Microsoft Store extension. Cinemafly ships with HEVC decoding built directly into the app, so <strong>.mp4</strong> and <strong>.mov</strong> files recorded on any modern iPhone or Android device just open and play, with no codec pack, no browser download, and no hidden fee.
+              </p>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>4K and Ultra HD (UHD) video playback</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '0.98rem' }}>
+                Cinemafly decodes and renders true 3840×2160 4K and Ultra HD content smoothly, with accurate HDR10 color handling and responsive seeking even on large, multi-gigabyte files. Combined with hardware acceleration, 4K HEVC movies play without dropped frames — on both high-end desktops and everyday laptops.
+              </p>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>MKV, MP4, AVI, MOV, WMV, FLV, WEBM — one player for every format</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '0.98rem' }}>
+                Real media libraries are messy — old AVI home videos, MOV clips from an iPhone, MKV rips with multiple audio and subtitle tracks, and the occasional legacy WMV or FLV file. Cinemafly opens all of it through a single, consistent interface, so you never have to keep three different players installed just to cover your whole collection.
+              </p>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>Modern, immersive dark-themed interface</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '0.98rem' }}>
+                A dark UI isn't just a style choice — it keeps the video itself the brightest thing on screen, reduces eye strain in the dim rooms most people actually watch movies in, and matches the dark interfaces already standard across every major streaming platform.
+              </p>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>Hardware accelerated playback for smooth performance</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '0.98rem' }}>
+                Cinemafly automatically offloads decoding to your GPU's dedicated video engine — Intel Quick Sync, NVIDIA NVDEC, or AMD's decode hardware — instead of leaning on the CPU. The result: lower battery drain, less fan noise, and smooth playback even on budget and mid-range laptops.
+              </p>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>Cinema Mode: distraction-free, auto-hide controls</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '0.98rem' }}>
+                Playback controls fade away the moment you stop needing them and reappear instantly when you move your mouse — recreating the focused, lights-down feeling of an actual movie theater, without ever getting in the way.
+              </p>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>Lightweight, offline, and privacy-focused by design</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '0.98rem' }}>
+                Cinemafly is a local, offline-first app. Your video files and viewing habits never get uploaded anywhere — there's no cloud sync, no account requirement, and no background telemetry. It's a small install that starts fast and stays out of your way.
+              </p>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>Automatic Dolby Atmos and DTS-HD passthrough</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '0.98rem' }}>
+                When a capable AV receiver or Atmos soundbar is connected, Cinemafly passes the original, undecoded audio bitstream straight through instead of quietly downmixing it to stereo — so your surround sound hardware renders full object-based Atmos audio and lossless DTS-HD Master Audio exactly as mastered.
+              </p>
+            </div>
           </div>
         </div>
       </section>

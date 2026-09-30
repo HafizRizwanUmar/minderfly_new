@@ -30,6 +30,7 @@ const FOOTER_LINKS = {
   Resources: [
     { label: 'How We Build', href: '/how-we-build' },
     { label: 'News & Updates', href: '/news' },
+    { label: 'Service Locations', href: '/locations' },
     { label: 'Contact Us', href: '/contact' },
   ],
 }
